@@ -1,0 +1,35 @@
+---
+import Logo from './Logo.astro'
+---
+
+<header
+  id="landing-header"
+  class="py-3 px-10 flex items-center fixed top-0 w-full justify-between z-40 text-black"
+>
+  <div class="flex flex-grow basis-0">
+    <a href="./" class="w-30">
+      <Logo />
+    </a>
+  </div>
+
+  <nav class="xl:block">
+    <ul
+      class="flex text-sm [&>li>a]:transition-colors [&>li>a]:duration-500 [&>li>a]:text-current [&>li>a]:font-medium [&>li>a]:inline-block [&>li>a]:px-4 [&>li>a]:py-2"
+    >
+      <li><a href="#">Inicio</a></li>
+      <li><a href="#">Experiencia</a></li>
+      <li><a href="#">Proyectos</a></li>
+      <li><a href="#">Mis Resúmenes</a></li>
+    </ul>
+  </nav>
+
+  <nav class="flex flex-grow justify-end basis-0">
+    <ul
+      class="flex text-sm [&>li>a]:transition-colors [&>li>a]:duration-500 [&>li>a]:text-current [&>li>a]:font-medium [&>li>a]:inline-block [&>li>a]:px-4 [&>li>a]:py-2"
+    >
+      <li class="xl:block"><a href="#">T</a></li>
+      <li class="xl:block"><a href="#">I</a></li>
+      <li class="block"><a id="menu-btn" href="#">Menú</a></li>
+    </ul>
+  </nav>
+</header>
