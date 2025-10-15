@@ -5,7 +5,7 @@
       "@/*": [
         "src/*"
       ]
-    },
+    }
   },
   "extends": "astro/tsconfigs/strict",
   "include": [
