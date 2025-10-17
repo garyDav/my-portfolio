@@ -1,6 +1,24 @@
+---
+import MailCodeIcon from '../icons/MailCode.astro'
+import BrandGithubIcon from '../icons/BrandGithub.astro'
+import BrandLinkedinIcon from '../icons/BrandLinkedin.astro'
+---
 
-<section class="mt-12">
-  <h1>Hey, soy garyDav</h1>
-  <h2>Desarrollador FullStack | senior Backend</h2>
-  <p>+8 años de experiencia, <span>Ingeniero de Sistemas</span> de Sucre - Bolivia </p>
+<section class="mx-4 mt-18 text-pretty">
+  <h1 class="text-4xl py-2 text-white font-bold tracking-tight">Soy Gary<span class="text-primary">•</span>D<span class="text-primary">•</span>Guzmán</h1>
+
+  <h2 class="text-2xl py-2 flex items-center gap-2">Desarrollador <a href="https://github.com/garyDav/"><span class="bg-surface rounded-md text-base text-surface-dark py-1 px-2 font-semibold">FullStack</span></a></h2>
+
+  <p class="text-lg py-4"><strong>+8 años</strong> de experiencia, culminando <em>Máster en Desarrollo de Aplicaciones y Servicios Web</em> en la <em><a class="text-link hover:underline" href="https://www.universidadviu.com/int/maestria-desarrollo-web">(VIU)</a></em> con tres carreras culminadas del área de la informática aplicada, radicando en Sucre - Bolivia 🇧🇴. <strong class="text-accent">Tengo una habilidad integral para liderar procesos de lanzamiento de productos digitales</strong>, abarcando desde la planificación estratégica y el diseño funcional hasta la enseñanza aplicada y la mentoría técnica de problemas reales mediante código.</p>
+
+  <ul class="py-4 flex flex-wrap items-center justify-around">
+    <li class="p-2 bg-primary text-bg rounded-full"><MailCodeIcon class="size-10" /></li>
+    <li class="p-2 bg-neutral-800 rounded-full"><BrandGithubIcon class="size-10" /></li>
+    <li class="p-2 bg-blue-400 text-bg rounded-full"><BrandLinkedinIcon class="size-10" /></li>
+  </ul>
+
+  <figure class="my-4 border-2 border-primary flex items-center justify-center w-40 h-40 mx-auto rounded-full overflow-hidden">
+  <img src="/img/profile.webp" alt="My Profile" class="object-cover w-full h-full" />
+</figure>
+
 </section>
