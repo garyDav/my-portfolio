@@ -1,55 +1,67 @@
-<div class="mx-4 my-6 text-pretty">
+---
+import BriefcaseIcon from '../icons/Briefcase.astro'
+---
 
-    <!-- Item #1 -->
-    <div class="relative pl-8 sm:pl-32 py-6 group">
-        <!-- Purple label -->
-        <div class="font-caveat font-medium text-2xl text-indigo-500 mb-1 sm:mb-0">The origin</div>
-        <!-- Vertical line (::before) ~ Date ~ Title ~ Circle marker (::after) -->
-        <div class="flex flex-col sm:flex-row items-start mb-1 group-last:before:hidden before:absolute before:left-2 sm:before:left-0 before:h-full before:px-px before:bg-slate-300 sm:before:ml-[6.5rem] before:self-start before:-translate-x-1/2 before:translate-y-3 after:absolute after:left-2 sm:after:left-0 after:w-2 after:h-2 after:bg-indigo-600 after:border-4 after:box-content after:border-slate-50 after:rounded-full sm:after:ml-[6.5rem] after:-translate-x-1/2 after:translate-y-1.5">
-            <time class="sm:absolute left-0 translate-y-0.5 inline-flex items-center justify-center text-xs font-semibold uppercase w-20 h-6 mb-3 sm:mb-0 text-emerald-600 bg-emerald-100 rounded-full">May, 2020</time>
-            <div class="text-xl font-bold text-slate-900">Acme was founded in Milan, Italy</div>
-        </div>
-        <!-- Content -->
-        <div class="text-slate-500">Pretium lectus quam id leo. Urna et pharetra pharetra massa massa. Adipiscing enim eu neque aliquam vestibulum morbi blandit cursus risus.</div>
-    </div>
-    
-    <!-- Item #2 -->
-    <div class="relative pl-8 sm:pl-32 py-6 group">
-        <!-- Purple label -->
-        <div class="font-caveat font-medium text-2xl text-indigo-500 mb-1 sm:mb-0">The milestone</div>
-        <!-- Vertical line (::before) ~ Date ~ Title ~ Circle marker (::after) -->
-        <div class="flex flex-col sm:flex-row items-start mb-1 group-last:before:hidden before:absolute before:left-2 sm:before:left-0 before:h-full before:px-px before:bg-slate-300 sm:before:ml-[6.5rem] before:self-start before:-translate-x-1/2 before:translate-y-3 after:absolute after:left-2 sm:after:left-0 after:w-2 after:h-2 after:bg-indigo-600 after:border-4 after:box-content after:border-slate-50 after:rounded-full sm:after:ml-[6.5rem] after:-translate-x-1/2 after:translate-y-1.5">
-            <time class="sm:absolute left-0 translate-y-0.5 inline-flex items-center justify-center text-xs font-semibold uppercase w-20 h-6 mb-3 sm:mb-0 text-emerald-600 bg-emerald-100 rounded-full">May, 2021</time>
-            <div class="text-xl font-bold text-slate-900">Reached 5K customers</div>
-        </div>
-        <!-- Content -->
-        <div class="text-slate-500">Pretium lectus quam id leo. Urna et pharetra pharetra massa massa. Adipiscing enim eu neque aliquam vestibulum morbi blandit cursus risus.</div>
-    </div>
-    
-    <!-- Item #3 -->
-    <div class="relative pl-8 sm:pl-32 py-6 group">
-        <!-- Purple label -->
-        <div class="font-caveat font-medium text-2xl text-indigo-500 mb-1 sm:mb-0">The acquisitions</div>
-        <!-- Vertical line (::before) ~ Date ~ Title ~ Circle marker (::after) -->
-        <div class="flex flex-col sm:flex-row items-start mb-1 group-last:before:hidden before:absolute before:left-2 sm:before:left-0 before:h-full before:px-px before:bg-slate-300 sm:before:ml-[6.5rem] before:self-start before:-translate-x-1/2 before:translate-y-3 after:absolute after:left-2 sm:after:left-0 after:w-2 after:h-2 after:bg-indigo-600 after:border-4 after:box-content after:border-slate-50 after:rounded-full sm:after:ml-[6.5rem] after:-translate-x-1/2 after:translate-y-1.5">
-            <time class="sm:absolute left-0 translate-y-0.5 inline-flex items-center justify-center text-xs font-semibold uppercase w-20 h-6 mb-3 sm:mb-0 text-emerald-600 bg-emerald-100 rounded-full">May, 2022</time>
-            <div class="text-xl font-bold text-slate-900">Acquired various companies, inluding Technology Inc.</div>
-        </div>
-        <!-- Content -->
-        <div class="text-slate-500">Pretium lectus quam id leo. Urna et pharetra pharetra massa massa. Adipiscing enim eu neque aliquam vestibulum morbi blandit cursus risus.</div>
-    </div>
-    
-    <!-- Item #4 -->
-    <div class="relative pl-8 sm:pl-32 py-6 group">
-        <!-- Purple label -->
-        <div class="font-caveat font-medium text-2xl text-indigo-500 mb-1 sm:mb-0">The IPO</div>
-        <!-- Vertical line (::before) ~ Date ~ Title ~ Circle marker (::after) -->
-        <div class="flex flex-col sm:flex-row items-start mb-1 group-last:before:hidden before:absolute before:left-2 sm:before:left-0 before:h-full before:px-px before:bg-slate-300 sm:before:ml-[6.5rem] before:self-start before:-translate-x-1/2 before:translate-y-3 after:absolute after:left-2 sm:after:left-0 after:w-2 after:h-2 after:bg-indigo-600 after:border-4 after:box-content after:border-slate-50 after:rounded-full sm:after:ml-[6.5rem] after:-translate-x-1/2 after:translate-y-1.5">
-            <time class="sm:absolute left-0 translate-y-0.5 inline-flex items-center justify-center text-xs font-semibold uppercase w-20 h-6 mb-3 sm:mb-0 text-emerald-600 bg-emerald-100 rounded-full">May, 2023</time>
-            <div class="text-xl font-bold text-slate-900">Acme went public at the New York Stock Exchange</div>
-        </div>
-        <!-- Content -->
-        <div class="text-slate-500">Pretium lectus quam id leo. Urna et pharetra pharetra massa massa. Adipiscing enim eu neque aliquam vestibulum morbi blandit cursus risus.</div>
-    </div>
+<div class="mx-4 my-10 text-pretty">
+  <h2 class="text-3xl font-semibold flex items-center gap-2"><BriefcaseIcon class="size-10" />Experiencia</h2>
 
+  <!-- Item #1 -->
+  <div class="relative pl-8 sm:pl-32 py-6 group">
+    <!-- Purple label -->
+    <div class="font-caveat font-medium text-2xl text-indigo-500 mb-1 sm:mb-0">Encargado del Departamento de Sistemas</div>
+    <!-- Vertical line (::before) ~ Date ~ Title ~ Circle marker (::after) -->
+    <div class="flex flex-col sm:flex-row items-start mb-1 group-last:before:hidden before:absolute before:left-2 sm:before:left-0 before:h-full before:px-px before:bg-slate-300 sm:before:ml-[6.5rem] before:self-start before:-translate-x-1/2 before:translate-y-3 after:absolute after:left-2 sm:after:left-0 after:w-2 after:h-2 after:bg-indigo-600 after:border-4 after:box-content after:border-slate-50 after:rounded-full sm:after:ml-[6.5rem] after:-translate-x-1/2 after:translate-y-1.5">
+      <time class="sm:absolute left-0 translate-y-0.5 inline-flex items-center justify-center text-xs font-semibold uppercase w-38 h-6 mb-3 sm:mb-0 text-emerald-600 bg-emerald-100 rounded-full">2021 - Actualmente</time>
+      <div class="text-xl font-bold text-slate-100">Comunidad Educativa Pastoral Don Bosco, Sucre</div>
+    </div>
+    <!-- Content -->
+    <div class="text-slate-400">
+      <p class="py-1 indent-8">Lideré la división tecnológica de la institución; implementé desde la <a class="underline" href="https://donboscosucre.edu.bo/">página web</a> hasta aplicaciones web que automatizan el proceso administrativo interno de la institución, desplegué el <a  class="underline"href="https://acad.donboscosucre.edu.bo/login">Sistema Académico Disciplinario</a>, y definí infraestructura y redes para mejorar rendimiento y operación escolar.</p>
+      <p class="py-1 indent-8">Gestioné operaciones DevOps (VPS/servidores), administración de Google Workspace y plataforma web utilizando tecnologías como:</p>
+    </div>
+    <!-- Technology -->
+    <div></div>
+  </div>
+
+  <!-- Item #2 -->
+  <div class="relative pl-8 sm:pl-32 py-6 group">
+    <!-- Purple label -->
+    <div class="font-caveat font-medium text-2xl text-indigo-500 mb-1 sm:mb-0">Docente cursos de especialidad</div>
+    <!-- Vertical line (::before) ~ Date ~ Title ~ Circle marker (::after) -->
+    <div class="flex flex-col sm:flex-row items-start mb-1 group-last:before:hidden before:absolute before:left-2 sm:before:left-0 before:h-full before:px-px before:bg-slate-300 sm:before:ml-[6.5rem] before:self-start before:-translate-x-1/2 before:translate-y-3 after:absolute after:left-2 sm:after:left-0 after:w-2 after:h-2 after:bg-indigo-600 after:border-4 after:box-content after:border-slate-50 after:rounded-full sm:after:ml-[6.5rem] after:-translate-x-1/2 after:translate-y-1.5">
+      <time class="sm:absolute left-0 translate-y-0.5 inline-flex items-center justify-center text-xs font-semibold uppercase w-20 h-6 mb-3 sm:mb-0 text-emerald-600 bg-emerald-100 rounded-full">2025</time>
+      <div class="text-xl font-bold text-slate-100">Instituto Técnico de Educación Contínua</div>
+    </div>
+    <!-- Content -->
+    <div class="text-slate-400"><p class="py-1 indent-8">Como docente de especialidad en el ITEC imparto cursos prácticos de React, Data Science y desarrollo Full-Stack, además de fundamentos sólidos de programación. Me enfoco en construir proyectos reales (formularios, autenticación, consumo de APIs, modelado de datos y despliegue), buenas prácticas y pensamiento algorítmico. Disfruto enseñar y mentorar, acompañando a mis estudiantes en su ruta profesional.</p></div>
+  </div>
+
+  <!-- Item #3 -->
+  <div class="relative pl-8 sm:pl-32 py-6 group">
+    <!-- Purple label -->
+    <div class="font-caveat font-medium text-2xl text-indigo-500 mb-1 sm:mb-0">Desarrollador Backend</div>
+    <!-- Vertical line (::before) ~ Date ~ Title ~ Circle marker (::after) -->
+    <div class="flex flex-col sm:flex-row items-start mb-1 group-last:before:hidden before:absolute before:left-2 sm:before:left-0 before:h-full before:px-px before:bg-slate-300 sm:before:ml-[6.5rem] before:self-start before:-translate-x-1/2 before:translate-y-3 after:absolute after:left-2 sm:after:left-0 after:w-2 after:h-2 after:bg-indigo-600 after:border-4 after:box-content after:border-slate-50 after:rounded-full sm:after:ml-[6.5rem] after:-translate-x-1/2 after:translate-y-1.5">
+        <time class="sm:absolute left-0 translate-y-0.5 inline-flex items-center justify-center text-xs font-semibold uppercase w-20 h-6 mb-3 sm:mb-0 text-emerald-600 bg-emerald-100 rounded-full">2021-2022</time>
+        <div class="text-xl font-bold text-slate-100">Allivia (Telemedicina)</div>
+    </div>
+    <!-- Content -->
+    <div class="text-slate-400"><p class="py-1 indent-8">En Allivia fui Arquitecto Principal de Back-End: diseñé y consolidé la plataforma de telemedicina, integré pagos y facturación (QR), y administré la infraestructura en GCP.</p></div>
+  </div>
+
+  <!-- Item #4 -->
+  <div class="relative pl-8 sm:pl-32 py-6 group">
+    <!-- Purple label -->
+    <div class="font-caveat font-medium text-2xl text-indigo-500 mb-1 sm:mb-0">Freelancer</div>
+    <!-- Vertical line (::before) ~ Date ~ Title ~ Circle marker (::after) -->
+    <div class="flex flex-col sm:flex-row items-start mb-1 group-last:before:hidden before:absolute before:left-2 sm:before:left-0 before:h-full before:px-px before:bg-slate-300 sm:before:ml-[6.5rem] before:self-start before:-translate-x-1/2 before:translate-y-3 after:absolute after:left-2 sm:after:left-0 after:w-2 after:h-2 after:bg-indigo-600 after:border-4 after:box-content after:border-slate-50 after:rounded-full sm:after:ml-[6.5rem] after:-translate-x-1/2 after:translate-y-1.5">
+      <time class="sm:absolute left-0 translate-y-0.5 inline-flex items-center justify-center text-xs font-semibold uppercase w-20 h-6 mb-3 sm:mb-0 text-emerald-600 bg-emerald-100 rounded-full">2014-2021</time>
+      <div class="text-xl font-bold text-slate-100">Desarrollador y Mentor</div>
+    </div>
+    <!-- Content -->
+    <div class="text-slate-400">
+      <p class="py-1 indent-8">A lo largo de mi trayectoria he desarrollado diversos proyectos como freelancer, diseñando e implementando aplicaciones web y de escritorio para empresas locales y nacionales. Entre los más destacados se encuentran plataformas como Andes Bus (venta de pasajes en línea), Empleo Guía (bolsa de trabajo), Open Red (red empresarial), y sistemas internos de gestión como Condor Trekkers y Crédito y Moneda, además de soluciones de escritorio en C# /.NET para control de asistencia y venta de periódicos para personas no videntes</p>
+      <p class="py-1 indent-8">Paralelamente, he sido mentor y guía de proyectos de grado en la Universidad San Francisco Xavier de Chuquisaca y en distintos institutos tecnológicos, acompañando a los estudiantes en la estructuración, desarrollo y defensa de sus trabajos finales, fomentando el uso de metodologías ágiles, buenas prácticas de programación y documentación técnica profesional.</p>
+    </div>
+  </div>
 </div>
