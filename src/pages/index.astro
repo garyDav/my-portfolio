@@ -1,0 +1,27 @@
+---
+import Layout from '#layouts/layout.astro';
+import Presentation from '#components/Presentation.astro'
+import Experience from '#components/Experience.astro'
+import FeaturedProjects from '#components/FeaturedProjects.astro'
+import Blogs from '#components/Blogs.astro'
+
+import SectionContainer from '#components/SectionContainer.astro'
+---
+
+<Layout title="Portafolio: Gary Guzman">
+  <SectionContainer id="sobre-mi">
+    <Presentation />
+  </SectionContainer>
+
+  <SectionContainer id="experiencia">
+    <Experience />
+  </SectionContainer>
+
+  <SectionContainer id="proyectos">
+    <FeaturedProjects />
+  </SectionContainer>
+
+  <SectionContainer id="blogs">
+    <Blogs />
+  </SectionContainer>
+</Layout>

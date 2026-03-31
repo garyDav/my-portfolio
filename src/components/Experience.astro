@@ -1,0 +1,70 @@
+---
+import BriefcaseIcon from '../icons/Briefcase.astro'
+import Content from '../layouts/Content.astro'
+
+const experience = [
+  {
+    title: 'Encargado del Departamento de Sistemas',
+    company: 'Comunidad Educativa Pastoral Don Bosco, Sucre',
+    date: '2021-Hoy',
+    description: [
+      'Lideré la división tecnológica de la institución; implementé desde la página web hasta aplicaciones web que automatizan el proceso administrativo interno de la institución, desplegué el Sistema Académico Disciplinario, y definí infraestructura y redes para mejorar rendimiento y operación escolar.',
+      'Gestioné operaciones DevOps (VPS/servidores), administración de Google Workspace y plataforma web.',
+    ],
+  },
+  {
+    title: 'Docente cursos de especialidad',
+    company: 'Instituto Técnico de Educación Contínua',
+    date: '2025',
+    description: [
+      'Como docente de especialidad en el ITEC imparto cursos prácticos de React, Data Science y desarrollo Full-Stack, además de fundamentos sólidos de programación. Me enfoco en construir proyectos reales (formularios, autenticación, consumo de APIs, modelado de datos y despliegue), buenas prácticas y pensamiento algorítmico. Disfruto enseñar y mentorar, acompañando a mis estudiantes en su ruta profesional.',
+    ],
+  },
+  {
+    title: 'Desarrollador Backend',
+    company: 'Allivia (Telemedicina)',
+    date: '2021-2022',
+    description: [
+      'En Allivia fui Arquitecto Principal de Back-End: diseñé y consolidé la plataforma de telemedicina, integré pagos y facturación (QR), y administré la infraestructura en GCP.',
+    ],
+  },
+  {
+    title: 'Freelancer',
+    company: 'Desarrollador y Mentor',
+    date: '2014-2021',
+    description: [
+      'A lo largo de mi trayectoria he desarrollado diversos proyectos como freelancer, diseñando e implementando aplicaciones web y de escritorio para empresas locales y nacionales. Entre los más destacados se encuentran plataformas como Andes Bus (venta de pasajes en línea), Empleo Guía (bolsa de trabajo), Open Red (red empresarial), y sistemas internos de gestión como Condor Trekkers y Crédito y Moneda, además de soluciones de escritorio en C# /.NET para control de asistencia y venta de periódicos para personas no videntes.',
+      'Paralelamente, he sido mentor y guía de proyectos de grado en la Universidad San Francisco Xavier de Chuquisaca y en distintos institutos tecnológicos, acompañando a los estudiantes en la estructuración, desarrollo y defensa de sus trabajos finales, fomentando el uso de metodologías ágiles, buenas prácticas de programación y documentación técnica profesional.',
+    ]
+  }
+]
+---
+
+<Content>
+  <h2 class="text-3xl font-semibold flex items-center gap-2">
+    <BriefcaseIcon class="size-10" />Experiencia
+  </h2>
+
+  {experience.map(({ title, company, date, description }) => (
+    <div class="relative pl-8 sm:pl-32 py-6 group">
+      <div class="font-caveat font-medium text-2xl text-secondary-5 mb-1 sm:mb-0">
+        {title}
+      </div>
+      <div
+        class="flex flex-col sm:flex-row items-start mb-1 group-last:before:hidden before:absolute before:left-2 sm:before:left-0 before:h-full before:px-px before:bg-slate-300 sm:before:ml-[6.5rem] before:self-start before:-translate-x-1/2 before:translate-y-3 after:absolute after:left-2 sm:after:left-0 after:w-2 after:h-2 after:bg-indigo-600 after:border-4 after:box-content after:border-slate-50 after:rounded-full sm:after:ml-[6.5rem] after:-translate-x-1/2 after:translate-y-1.5">
+        <time
+          class="sm:absolute left-0 translate-y-0.5 inline-flex items-center justify-center text-xs font-semibold uppercase w-20 h-6 mb-3 sm:mb-0 text-emerald-600 bg-emerald-100 rounded-full"
+          >{date}</time
+        >
+        <div class="text-xl font-bold text-slate-900 dark:text-slate-100">
+          {company}
+        </div>
+      </div>
+      <div class="text-slate-400">
+        {description.map((paragraph) => (
+          <p class="py-1 indent-8">{paragraph}</p>
+        ))}
+      </div>
+    </div>
+  ))}
+</Content>

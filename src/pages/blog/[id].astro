@@ -1,0 +1,39 @@
+---
+import { getCollection, render } from 'astro:content'
+import Layout from '#layouts/layout.astro';
+import ContentLarge from '#layouts/ContentLarge.astro'
+
+export async function getStaticPaths() {
+  const blogs = await getCollection('blogs')
+
+  return blogs.map(blog => ({
+    params: { id: blog.id },
+    props: { blog },
+  }))
+}
+
+const { blog } = Astro.props
+const { slug, data } = blog
+const { title, author, img, readtime, description } = data
+
+const { Content } = await render(blog)
+---
+
+<Layout title={title}>
+  <ContentLarge>
+    <h1 class="mb-10 text-5xl font-bold text-center text-black dark:text-white">{title}</h1>
+
+    <figure class="mb-10 aspect-video overflow-hidden">
+      <img
+        transition:name={`img-${slug}`}
+        class="object-cover w-full h-full"
+        src={`/img/blogs/${img}`}
+        alt={`${title} - ${author}`}
+      />
+    </figure>
+
+    <article class="prose prose-lg dark:prose-invert marked">
+      <Content />
+    </article>
+  </ContentLarge>
+</Layout>
