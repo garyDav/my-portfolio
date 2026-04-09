@@ -43,7 +43,7 @@ Esta es la lista de instalaciones recomendadas para el curso de React Native, si
 
 - [Visual Studio Code](https://code.visualstudio.com/)
 
-- [Perfil VS-Code](https://ggary.dev/vscode-ext.code-profile)
+- [Perfil VS-Code](https://ggary.dev/shared/vscode-ext.code-profile)
 
 - [Postman](https://www.postman.com/downloads/)
 
