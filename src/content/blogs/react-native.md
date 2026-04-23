@@ -92,6 +92,8 @@ git config --global user.email "Tu correo"
 
 ## Antes de empezar
 
+[Programemos juntos](https://prod.liveshare.vsengsaas.visualstudio.com/join?747E8A25E7BFE8D2B48E68A1325939EAE485)
+
 ### Usar PNPM
 
 Habilitando una característica que ya viene con `npm`, ejecutar: `corepack enable`, para actualizar a la última versión: `corepack prepare pnpm@latest --activate`
