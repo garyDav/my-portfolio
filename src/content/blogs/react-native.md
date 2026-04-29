@@ -94,6 +94,172 @@ git config --global user.email "Tu correo"
 
 [Programemos juntos](https://prod.liveshare.vsengsaas.visualstudio.com/join?747E8A25E7BFE8D2B48E68A1325939EAE485)
 
+### Configurar Terminal de Windows
+
+[Tutorial](https://www.youtube.com/watch?v=5-aK2_WwrmM) solo hasta el minuto `5:40`
+
+[Descargar fuentes](https://github.com/garyDav/dev-matrix/tree/master/windows)
+
+```bash
+# Abrir Windows PowerShell
+# Click derecho nueva pestaña -> Settings -> Default terminal application: Cambiar a Windows Terminal -> Save
+# Click en el pincel "Appearance" -> Activar: Show acrylic in tab row -> Save
+# Cerrar terminal y volver Abrir
+# Nueva pestaña - Flecha abajo -> Settings
+# Click en icono Cuadraditos "Defaults" -> Appearance -> Color Scheme -> One Half Dark <-> también: Font face -> Hack NF o Firacode o la que prefieras de Nerd Fonts. Por último <-> Activar Acrylic "On" <-> Acrylic opacity 50%
+# Desde Microsoft Store -> Instalar: PowerShell
+# en Settings -> Default profile -> PowerShell -> Save
+# en Settings -> Click en settings.json, buscar "one half dark", mas o menos linea 141, copiar y pegar todo el objeto, cambiar el name por "One Half Dark (modded)", cambiar el background a "#001B26", guardar archivo.
+# en Settings -> "Defaults" -> Appearance -> Text "Color scheme" -> One Half Dark (modded) -> Save
+```
+
+### Instalar WSL2
+
+```bash
+wsl --install
+# Rebooted (Reiniciar Windows)
+# Buscar Ubuntu e ingresar, Si existe error:
+# Panel de Control -> Apps -> Programas and Features -> Turn Windows features on or off
+# Activar: Windows Subsystem for Linux
+# Activar: Hyper-V -> Hyper-V Platform
+# Volver abrir Powershell como administrador
+wsl --update
+
+# Convertir WSL1 a WSL2
+wsl --list
+wsl --list --verbose # Saber si la distro usa WSL1 o WSL2
+# Convertir WSL1 a WSL2
+wsl --set-version Ubuntu 2
+# Indicar que las distros utilicen WSL2
+wsl --set-default-version 2
+
+wsl # Entrar a la distribución predeterminada
+```
+
+### Configuración básica de Ubuntu
+
+```bash
+wsl # Ingresar a WSL2
+sudo apt update
+sudo apt upgrade
+
+# Instalar Fish Shell
+# https://launchpad.net/~fish-shell/+archive/ubuntu/release-3/+packages
+sudo apt install fish
+sudo chsh -s /usr/bin/fish
+chsh -s /usr/bin/fish
+fish -v # fish, version 3.1.0
+# Actualizar Fish Shell
+sudo apt-add-repository ppa:fish-shell/release-4
+sudo apt-get update
+sudo apt-get install fish
+fish -v # fish, version 4.3.3
+fish #Cambiar de terminal a fish
+
+# Instalar FISHER
+curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher
+fisher update jorgebucaran/fisher
+fisher -v # Ver en que versión estamos de fisher
+
+# Instalar NVM:
+fisher install jorgebucaran/nvm.fish
+nvm list-remote
+nvm install v16.13.0
+nvm use v12.9.1 # En caso de instalar esta versión
+set --universal nvm_default_version v16.19.1 # Vesion para Instalar todo NVIM
+
+# Instalar PNPM
+corepack enable
+pnpm bin -g
+pnpm setup
+ls ~/.local/share/pnpm
+set -g PNPM_HOME ~/.local/share/pnpm
+set -gx PATH $PNPM_HOME $PATH
+```
+
+### Configuración avanzada de Ubuntu
+
+Requisito realizar la anterior configuración.
+
+```bash
+# Instalar TIDE (themplate fisher) puedes utilizar el script de la página oficial
+# https://github.com/IlanCosman/tide
+# Recomendado de forma manual:
+set -l _tide_tmp_dir (command mktemp -d)
+curl https://codeload.github.com/ilancosman/tide/tar.gz/HEAD | tar -xzC $_tide_tmp_dir
+command cp -R $_tide_tmp_dir/tide-HEAD/{completions,conf.d,functions} $__fish_config_dir
+exec fish --init-command "set -g fish_greeting; emit _tide_init_install"
+
+# Instalar fonts and icons:
+# Nerd fonts:
+mkdir -p ~/.local/share/fonts
+cd ~/.local/share/fonts && curl -fLo "Droid Sans Mono for Powerline Nerd Font Complete.otf" https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/DroidSansMono/complete/Droid%20Sans%20Mono%20Nerd%20Font%20Complete.otf
+sudo apt install fonts-firacode
+
+# Instalar PNPM
+corepack enable
+pnpm bin -g
+pnpm setup
+ls ~/.local/share/pnpm
+set -g PNPM_HOME ~/.local/share/pnpm
+set -gx PATH $PNPM_HOME $PATH
+sudo apt install -y build-essential # Instalar C++ para GYP
+sudo apt install g++-12 # para node v24.12.0
+export CXXFLAGS="--std=c++20"
+
+# Instalar tree-sitter
+pnpm add -g tree-sitter tree-sitter-cli
+pnpm rebuild -g tree-sitter # En caso de error volver a construir
+
+# Instalar Diagnostic Language Server
+pnpm add -g diagnostic-languageserver
+
+# Install Luajit:
+sudo apt install luajit
+
+# Instalar z for fish:
+fisher install jethrokuan/z
+
+# Instalar EXA:
+wget https://github.com/ogham/exa/releases/download/v0.10.0/exa-linux-x86_64-v0.10.0.zip
+unzip exa-linux-x86_64-v0.10.0.zip
+cd bin/
+sudo cp exa /usr/local/bin/
+rm -R bin/
+rm -R completions/
+rm -R man/
+rm exa-linux-x86_64-v0.10.0.zip
+abbr -a ll exa --long --header --git # Opcional
+
+# Instalar GO:
+wget https://go.dev/dl/go1.23.0.linux-amd64.tar.gz
+sudo tar -xvf go1.23.0.linux-amd64.tar.gz
+sudo mv go /usr/local
+fish_add_path /usr/local/go/bin
+go version
+sudo rm -R go1.23.0.linux-amd64.tar.gz
+
+# Instalar GHQ:
+## Directo con GO
+go install github.com/x-motemen/ghq@latest
+## build
+git clone https://github.com/x-motemen/ghq .ghq
+cd .ghq
+sudo apt install make
+make install
+cd ~/go/bin/
+chmod +x ghq
+sudo mv ghq /usr/local/bin/
+cd
+rm -R .ghq
+
+# Instalar PECO:
+sudo apt install peco
+
+# Instalar ripgrep
+sudo apt install ripgrep
+```
+
 ### Usar PNPM
 
 Habilitando una característica que ya viene con `npm`, ejecutar: `corepack enable`, para actualizar a la última versión: `corepack prepare pnpm@latest --activate`
