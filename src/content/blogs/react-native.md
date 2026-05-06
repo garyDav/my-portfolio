@@ -78,7 +78,7 @@ git config --global user.email "Tu correo"
 
 - [Paste JSON as Code](https://marketplace.visualstudio.com/items?itemName=quicktype.quicktype)
 
-- [Tailwind CSS InteliSense](https://marketplace.visualstudio.com/items?itemName=bradlc.vscode-tailwindcss)
+- [Tailwind CSS IntelliSense](https://marketplace.visualstudio.com/items?itemName=bradlc.vscode-tailwindcss)
 
 - [Colorize](https://marketplace.visualstudio.com/items?itemName=kamikillerto.vscode-colorize)
 
@@ -154,7 +154,7 @@ sudo apt-add-repository ppa:fish-shell/release-4
 sudo apt-get update
 sudo apt-get install fish
 fish -v # fish, version 4.3.3
-fish #Cambiar de terminal a fish
+fish # Cambiar de terminal a fish
 
 # Instalar FISHER
 curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher
@@ -166,7 +166,7 @@ fisher install jorgebucaran/nvm.fish
 nvm list-remote
 nvm install v16.13.0
 nvm use v12.9.1 # En caso de instalar esta versión
-set --universal nvm_default_version v16.19.1 # Vesion para Instalar todo NVIM
+set --universal nvm_default_version v16.19.1 # Versión para Instalar todo NVIM
 
 # Instalar PNPM
 corepack enable
@@ -182,7 +182,7 @@ set -gx PATH $PNPM_HOME $PATH
 Requisito realizar la anterior configuración.
 
 ```bash
-# Instalar TIDE (themplate fisher) puedes utilizar el script de la página oficial
+# Instalar TIDE (template fisher) puedes utilizar el script de la página oficial
 # https://github.com/IlanCosman/tide
 # Recomendado de forma manual:
 set -l _tide_tmp_dir (command mktemp -d)
@@ -328,7 +328,7 @@ pnpm run dev
 
 #### Empezar a escribir código
 
-Quiten todo el código que biene por defecto en `./src/App.tsx` y las importaciones innecesarias.
+Quiten todo el código que viene por defecto en `./src/App.tsx` y las importaciones innecesarias.
 
 ---
 
@@ -429,10 +429,10 @@ if (condición) {
 #### Lógicos
 
 | Operador | Significado                 |
-| -------- | --------------------------- | --- | --------------------------------- |
+| -------- | --------------------------- |
 | `!`      | Negación                    |
 | `&&`     | Y lógico (ambos verdaderos) |
-| `        |                             | `   | O lógico (al menos uno verdadero) |
+| `\|\|`   | O lógico (al menos uno verdadero) |
 
 > En JS, `0` y `""` (texto vacío) se consideran falsos. Todo lo demás es verdadero.
 
@@ -618,7 +618,7 @@ function externa() {
 
 ## CallStack (Pila de ejecución)
 
-La **CallStack** está intamamente relacionado con conceptos más avanzados como el **Event Loop**, **Closures**, y los distintos **Scopes** que existen en las funciones. Estos conceptos son fundamentales para entender cómo JavaScript maneja la ejecución de código, especialmente en un entorno asíncrono.
+La **CallStack** está íntimamente relacionado con conceptos más avanzados como el **Event Loop**, **Closures**, y los distintos **Scopes** que existen en las funciones. Estos conceptos son fundamentales para entender cómo JavaScript maneja la ejecución de código, especialmente en un entorno asíncrono.
 
 Cuando se llama a una función, se agrega un nuevo marco (frame) a la pila. Cuando la función termina, su marco se elimina de la pila. Si una función llama a otra función, el marco de la función llamada se agrega encima del marco de la función que la llamó.
 
@@ -670,7 +670,7 @@ console.log('🎮 ¡Vamos a jugar a las escondidas!');
 jugarEscondidas(); // breakpoint
 ```
 
-Con el breakpoint puesto ejecutamos nuestro script, como podemos observar la ejecución está detenida en `jugarEscondidas()`, damos un paso mas en nuestro programa se pocisiona en `ocultarJugador("Juan")`.
+Con el breakpoint puesto ejecutamos nuestro script, como podemos observar la ejecución está detenida en `jugarEscondidas()`, damos un paso mas en nuestro programa se posiciona en `ocultarJugador("Juan")`.
 
 > ⚠️ **Importante:** Si en este punto miramos la CallStack, veremos parte de la pila de ejecución (CallStack) en ese preciso momento acá podemos ver en que orden se fue llamando nuestro programa, la función que está arriba del todo es la que se está ejecutando en ese preciso momento `jugarEscondidas`, podemos ver su nombre, el nombre del archivo al que pertenece y el número de la próxima línea de código a ejecutar, en este caso `ocultarJugador('Juan')` **_que todavía no se ejecutó_**.
 
@@ -784,14 +784,11 @@ var decimal = 3.14;
 > 👀 **Nota**: En JavaScript, al momento de representar números decimales no es muy preciso.
 
 ```js
-0.1 +
-  0.2(
-    // 0.30000000000000004
-    0.1 + 0.2
-  ).toFixed(100); // 😩
+0.1 + 0.2; // 0.30000000000000004
+(0.1 + 0.2).toFixed(2); // "0.30"
 ```
 
-En `Rubi`, `Python`, y en `Java` pasa lo mismo, esto tiene que ver como están diseñado los números dentro del lenguaje, en estos lenguajes se utiliza un formato llamdo **IEEE 754**, en este formato cáda número ocupa 64 bits en la memoria (8 Bytes).
+En `Rubi`, `Python`, y en `Java` pasa lo mismo, esto tiene que ver como están diseñado los números dentro del lenguaje, en estos lenguajes se utiliza un formato llamado **IEEE 754**, en este formato cáda número ocupa 64 bits en la memoria (8 Bytes).
 
 ```js
 var numero = +(0.1 + 0.2).toFixed(2); // 😄
