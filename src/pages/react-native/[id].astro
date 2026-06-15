@@ -1,0 +1,30 @@
+---
+import { getCollection, render } from 'astro:content'
+import Layout from '#layouts/layout.astro';
+import ContentLarge from '#layouts/ContentLarge.astro'
+
+export async function getStaticPaths() {
+  const blog_react_native = await getCollection('reactNative')
+
+  return blog_react_native.map(blog => ({
+    params: { id: blog.id },
+    props: { blog },
+  }))
+}
+
+const { blog } = Astro.props
+const { slug, data } = blog
+const { title, author, readtime } = data
+
+const { Content } = await render(blog)
+---
+
+<Layout title={title}>
+  <ContentLarge>
+    <h1 class="mb-10 text-5xl font-bold text-center text-black dark:text-white">{title}</h1>
+
+    <article class="prose prose-lg dark:prose-invert marked">
+      <Content />
+    </article>
+  </ContentLarge>
+</Layout>
