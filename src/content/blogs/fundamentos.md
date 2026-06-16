@@ -8,7 +8,7 @@ readtime: 120
 
 #### ©️ Por: Ing. Gary Guzmán
 
-###### [📃 Todos](https://garydav.github.io/blogs-course) mis resúmenes por [@garyDav](https://github.com/garyDav)
+###### [📃 Todos](https://ggary.dev/) mis resúmenes por [@garyDav](https://github.com/garyDav)
 
 > 🗓️ Publicado, 22 de Julio del 2025
 

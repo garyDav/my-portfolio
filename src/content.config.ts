@@ -17,6 +17,7 @@ export const blogSchema = z.object({
 
 export const itemSchema = z.object({
   title: z.string(),
+  backLink: z.string(),
   author: z.string(),
   readtime: z.number(),
 });

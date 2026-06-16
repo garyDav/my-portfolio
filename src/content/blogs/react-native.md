@@ -8,13 +8,13 @@ readtime: 60
 
 #### ©️ Por: Ing. Gary Guzmán
 
-###### [📃 Todos](https://garydav.github.io/blogs-course) mis resúmenes por [@garyDav](https://github.com/garyDav)
+###### [📃 Todos](https://ggary.dev/) mis resúmenes por [@garyDav](https://github.com/garyDav)
 
 > 🗓️ Publicado, 08 de Abril del 2026
 
 ---
 
-#### Contenido de la materia
+#### Contenido de la materia:
 
 1. [**Instalaciones necesarias**](#instalaciones-necesarias)
 
@@ -27,6 +27,8 @@ readtime: 60
 5. [**Tipos de Datos**](#tipos-de-datos-primitivos)
 
 6. [**Use Strict**](#use-strict)
+
+7. [**Environment Setup → 📃**](/react-native/environment-setup)
 
 ---
 
@@ -428,10 +430,10 @@ if (condición) {
 
 #### Lógicos
 
-| Operador | Significado                 |
-| -------- | --------------------------- |
-| `!`      | Negación                    |
-| `&&`     | Y lógico (ambos verdaderos) |
+| Operador | Significado                       |
+| -------- | --------------------------------- |
+| `!`      | Negación                          |
+| `&&`     | Y lógico (ambos verdaderos)       |
 | `\|\|`   | O lógico (al menos uno verdadero) |
 
 > En JS, `0` y `""` (texto vacío) se consideran falsos. Todo lo demás es verdadero.
