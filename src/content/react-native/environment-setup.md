@@ -61,7 +61,7 @@ Ese comando establece un **portproxy en Windows** que escucha en la IP pública 
 netsh advfirewall firewall add rule name="Aplicación Expo" dir=in action=allow protocol=TCP localport=8081
 
 # Verificar que la regla se haya agregado correctamente
-netsh advfirewall firewall show rule name="Aplicación NextJS"
+netsh advfirewall firewall show rule name="Aplicación Expo"
 ```
 
 Ese comando agrega una **regla al firewall de Windows** que permite explícitamente el tráfico entrante TCP en el puerto `8081`. En detalle: se crea una regla llamada _“Aplicación Expo”_ con dirección de entrada (`dir=in`), acción de permitir (`action=allow`), protocolo TCP y puerto local `8081`. El objetivo es que las conexiones externas hacia tu máquina no sean bloqueadas por el firewall, garantizando que el servicio de Expo que corre en ese puerto pueda ser accedido desde otros dispositivos de la red.
