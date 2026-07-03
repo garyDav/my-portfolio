@@ -28,7 +28,9 @@ readtime: 60
 
 6. [**Use Strict**](#use-strict)
 
-7. [**Environment Setup → 📃**](/react-native/environment-setup)
+7. [**Resumen Typescript → 📃**](/react-native/typescript)
+
+8. [**Environment Setup → 📃**](/react-native/environment-setup)
 
 ---
 
