@@ -30,7 +30,7 @@ readtime: 60
 Referencia: [Docs Expo App](https://docs.expo.dev/)
 
 ```bash
-pnpx create-expo-app@latest testing-app --template blank-typescript
+pnpm create expo-app@latest testing-app --template blank-typescript
 # Escoger la versión: For learning with Expo Go (SDK 54)
 cd testing-app
 pnpm install
@@ -41,11 +41,15 @@ Pasos a tomar en cuenta:
 
 - Instalar Expo Go en el dispositivo móvil.
 
-- (Opcional) Instalar [Vysor](https://www.vysor.io/) para emular el dispositivo móvil en la computadora.
+- (Opcional) Instalar [Vysor](https://www.vysor.io/) para compartir pantalla del celular físico a Windows 11 por USB.
+
+- (Opcional) Instalar [Scrcpy](https://github.com/genymobile/scrcpy) otra aplicación, software libre para compartir pantalla de celular a Windows por USB.
 
 - Escanear el código QR (desde la app expo go) que se muestra en la terminal o en el navegador para abrir la aplicación en el dispositivo móvil.
 
 ### Si estamos en WSL
+
+Necesitamos exponer el puerto de la aplicación que corre dentro de WSL hacia la red local de Windows 11, para que otros dispositivos puedan acceder a ella. Para esto, podemos usar `netsh` en Windows para crear un portproxy y una regla de firewall.
 
 ```bash
 # Desde Powershell de Windows en modo administrador.
@@ -70,15 +74,21 @@ Ese comando agrega una **regla al firewall de Windows** que permite explícitame
 
 Una vez que la aplicación esté corriendo, se mostrará un código QR en la terminal o en el navegador. Para abrir la aplicación en el dispositivo móvil, sigue estos pasos:
 
-1. Abre la aplicación **Expo Go** en tu dispositivo móvil.
+1. Desde WSL instalar: `pnpm add expo-cli -g` y aprobar los post scripts: `pnpm approve-builds -g`.
 
-2. En la pantalla principal de Expo Go, selecciona la opción **"Scan QR Code"** (Escanear código QR).
+2. Cambiar la ip que expondrá la aplicación, la IP de Windows: `set -gx REACT_NATIVE_PACKAGER_HOSTNAME 192.168.100.116`.
 
-3. Apunta la cámara de tu dispositivo móvil hacia el código QR que se muestra en la terminal.
+3. Ejecutar la aplicación: `pnpm start`.
 
-4. La aplicación Expo Go reconocerá el código QR y te preguntará si deseas abrir la aplicación. Confirma para abrirla.
+4. Abre la aplicación **Expo Go** en tu dispositivo móvil.
 
-5. También puedes abrir la aplicación manualmente ingresando la URL que se muestra en la terminal (por ejemplo, `exp://192.168.100.116:8081`).
+5. En la pantalla principal de Expo Go, selecciona la opción **"Scan QR Code"** (Escanear código QR).
+
+6. Apunta la cámara de tu dispositivo móvil hacia el código QR que se muestra en la terminal.
+
+7. La aplicación Expo Go reconocerá el código QR y te preguntará si deseas abrir la aplicación. Confirma para abrirla.
+
+8. También puedes abrir la aplicación manualmente ingresando la URL que se muestra en la terminal (por ejemplo, `exp://192.168.100.116:8081`).
 
 ### Para la primera vez ejecutar en Android
 
@@ -169,5 +179,7 @@ source ~/.config/fish/config.fish
 
 ```bash
 # Desde WSL
+pnpm start --tunnel
+# Si no funciona, ejecutar el siguiente comando para forzar la red interna
 pnpm start --tunnel
 ```
