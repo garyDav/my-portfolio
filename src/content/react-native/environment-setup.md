@@ -179,7 +179,7 @@ source ~/.config/fish/config.fish
 
 ```bash
 # Desde WSL
-pnpm start --tunnel
+pnpm start
 # Si no funciona, ejecutar el siguiente comando para forzar la red interna
 pnpm start --tunnel
 ```
