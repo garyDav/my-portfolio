@@ -2,6 +2,7 @@
 import MailCodeIcon from '../icons/MailCode.astro'
 import BrandGithubIcon from '../icons/BrandGithub.astro'
 import BrandLinkedinIcon from '../icons/BrandLinkedin.astro'
+import FilePDF from '../icons/FilePDF.astro'
 import Content from '../layouts/Content.astro'
 ---
 
@@ -52,6 +53,11 @@ import Content from '../layouts/Content.astro'
     <a href="https://www.linkedin.com/in/garydav/" target="_blank" rel="noopener noreferrer">
       <li class="p-2 bg-blue-400 rounded-full text-white dark:text-black">
         <BrandLinkedinIcon class="size-10" />
+      </li>
+    </a>
+    <a href="/pdf/CV_ggary.pdf" download="CV_GaryDav.pdf" target="_blank" rel="noopener noreferrer">
+      <li class="p-2 bg-red-400 rounded-full text-white dark:text-black">
+        <FilePDF class="size-10" />
       </li>
     </a>
   </ul>
