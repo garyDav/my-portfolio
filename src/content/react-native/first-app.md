@@ -37,7 +37,7 @@ cd 03-counter-app
 # Abrimos el proyecto en VS Code
 code .
 # Instalamos las dependencias
-pnpm install:
+pnpm install
 # Inicializamos el proyecto
 pnpm start
 ```

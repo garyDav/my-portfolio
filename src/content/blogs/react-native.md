@@ -43,7 +43,7 @@ readtime: 60
 
 # React Native - Expo
 
-Esta es la lista de instalaciones recomendadas para el curso de React Native, si encuentran enlaces adicionales o cambios en esta hoja, pueden hacerlos.
+Esta es la lista de instalaciones recomendadas para el curso de React Native. Si encuentran enlaces adicionales o cambios en esta hoja, pueden hacerlos.
 
 ## Instalaciones Necesarias
 
@@ -55,7 +55,7 @@ Esta es la lista de instalaciones recomendadas para el curso de React Native, si
 
 - [Git](https://git-scm.com/)
 
-```
+```bash
 git config --global user.name "Tu nombre"
 git config --global user.email "Tu correo"
 ```
@@ -268,7 +268,7 @@ sudo apt install ripgrep
 
 ### Usar PNPM
 
-Habilitando una característica que ya viene con `npm`, ejecutar: `corepack enable`, para actualizar a la última versión: `corepack prepare pnpm@latest --activate`
+Habilitando una característica que ya viene con `npm`, ejecutar: `corepack enable`. Para actualizar a la última versión: `corepack prepare pnpm@latest --activate`
 
 ```fish
 cd project

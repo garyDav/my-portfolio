@@ -18,7 +18,7 @@ readtime: 120
 
 ### Módulo 1
 
-**Objetivo pricipal del sistema operativo:**
+**Objetivo principal del sistema operativo:**
 
 ![Imagen 1](/img/blogs/windows-server-2012/Imagen1.png)
 
@@ -64,15 +64,15 @@ El sistema operativo tiene 4 capas
 
 ![Imagen 9](/img/blogs/windows-server-2012/Imagen9.png)
 
-Es una computadora en el que se ejecutan un programa que realiza alguna tarea en beneficio a otras aplicaciones llamadas (Clientes), tanto si se trata de un ordenador central conocido como Mainframe, o un mini ordenador, una computadora personal, una PDA, o un sistema Embebido, sin embargo hay computadoras destinadas únicamente a proveer los servicios de estos programas. Éstos son los servidores Antonomasia.
+Es una computadora en el que se ejecutan un programa que realiza alguna tarea en beneficio a otras aplicaciones llamadas (Clientes), tanto si se trata de un ordenador central conocido como Mainframe, o un mini ordenador, una computadora personal, una PDA, o un sistema Embebido. Sin embargo, hay computadoras destinadas únicamente a proveer los servicios de estos programas. Éstos son los servidores por antonomasia.
 
 **Tipos de Servidores que existen**
 
 ![Imagen 10](/img/blogs/windows-server-2012/Imagen10.png)
 
-Tenemos el servidor normal; un servidor Proxy o Firewall, un servidor corta fuego, el cual se utiliza para serguridad; un servidor de correo electrónico; servidor de archivos; servidor de base de datos; y servidores de directorio, que es específicamente lo que vamos a tratar en este curso.
+Tenemos el servidor normal; un servidor Proxy o Firewall, un servidor cortafuegos, el cual se utiliza para seguridad; un servidor de correo electrónico; servidor de archivos; servidor de base de datos; y servidores de directorio, que es específicamente lo que vamos a tratar en este curso.
 
-Dependiendo del objetivo del servidor que se necesite, existen diferentes tipos de servidores, auque el tipo lo vá a definir a la hora de instalar. Es decir a la hora de instalar el servidor definiremos para que se vá a utilizar ese servidor, no confundir que los fabricantes venden tipos de servidores.
+Dependiendo del objetivo del servidor que se necesite, existen diferentes tipos de servidores, aunque el tipo lo va a definir a la hora de instalar. Es decir, a la hora de instalar el servidor, definiremos para qué se va a utilizar ese servidor. No confundir que los fabricantes venden tipos de servidores.
 
 **Sistemas Operativos para Servidores**
 
@@ -82,7 +82,7 @@ Tenemos tres tipos de Sistemas Operativos para servidores:
 
 **Redhat**
 
-Puede ser descargado de internet, tiene vastantes programas socios, brinda un exlente rendimiento, seguridad, escalabilidad, y disponibilidad, es un sistema operativo de GNU/Linux, su nucleo está basado en Debian, este sistema operativo es utilizado de manera gratuita, auque muchas de las distribuciones de RedHat se compram auque a bajo costo.
+Puede ser descargado de internet, tiene bastantes programas socios, brinda un excelente rendimiento, seguridad, escalabilidad, y disponibilidad. Es un sistema operativo de GNU/Linux, su núcleo está basado en Debian. Este sistema operativo es utilizado de manera gratuita, aunque muchas de las distribuciones de RedHat se compran aunque a bajo costo.
 
 **Hablando de Windows Server 2012**
 
@@ -94,7 +94,7 @@ Windows Server 2012 no tiene soporte para computadoras con procesador de 32-bit 
 
 ![Imagen 13](/img/blogs/windows-server-2012/Imagen13.png)
 
-Se agregó y mejoró algunas características comparado con la versión del 2008, como Hyper-V, Rol y Administraciones de Direcciones IP, una nueva versión de tag manager y se presenta un nuevo sistema de archivos llamado REFS
+Se agregó y mejoró algunas características comparado con la versión del 2008, como Hyper-V, Rol y Administraciones de Direcciones IP, una nueva versión de task manager y se presenta un nuevo sistema de archivos llamado REFS.
 
 **Versiones de Windows Server 2012**
 
@@ -110,9 +110,9 @@ Windows Server 2012 solo viene estas 4 versiones, Windows Server 2008 ofrecía 1
 
 - Standard: Tiene dos instancias de virtualización
 
-- Datacenter: Tiene un numero ilimitado de virutalizaciones
+- Datacenter: Tiene un número ilimitado de virtualizaciones
 
-> Windows Server 2012 fué creado específicamente para trabajar con lo que hoy conocemos como **cloud computing**
+> Windows Server 2012 fue creado específicamente para trabajar con lo que hoy conocemos como **cloud computing**
 
 **Nuevas Características de Windows Server 2012**
 
@@ -124,7 +124,7 @@ Windows Server 2012 solo viene estas 4 versiones, Windows Server 2008 ofrecía 1
 
 No es mas que una consola de administración de comandos, me permite hacer todas las gestiones del SO, pero a nivel de comando
 
-El **Power Shell** es una interfaz de consola o (CLI) con posibilidad de escritura y con función de comandos, por medio de guiones (script), es mucho mas rica e iteractiva que su predecesor del DOS hasta Windows 7
+El **Power Shell** es una interfaz de consola o (CLI) con posibilidad de escritura y con función de comandos, por medio de guiones (script). Es mucho más rica e interactiva que su predecesor del DOS hasta Windows 7.
 
 Está diseñada para su uso, por parte de los administradores de sistema, con el propósito de automatizar tareas o realizarlas de forma más controlada
 
@@ -230,11 +230,11 @@ Los tres tipos de redes básicos son:
 
 > Un nodo o un host, no es más que cualquier dispositivo conectado a la red.
 
-- Por ejemplo, si tenemos conectados unas computadoras en un edificio completo, o un edicicio que está a lado, y todos estan conectados en red, eso es una red **LAN**.
+Por ejemplo, si tenemos conectados unas computadoras en un edificio completo, o un edificio que está a lado, y todos están conectados en red. Eso es una red **LAN**.
 
-- Pero si tengo un edicicio en Santo Domingo y otro en Estados Unidos, o Venezuela, o en México, entonces es una red **WAN**.
+- Pero si tengo un edificio en Santo Domingo y otro en Estados Unidos, o Venezuela, o en México. Entonces es una red **WAN**.
 
-- **WLAN** son las redes **LAN** pero de forma Wireless, o inalámbirca, sin la necesidad de conectar un cable.
+- **WLAN** son las redes **LAN** pero de forma Wireless, o inalámbrica, sin la necesidad de conectar un cable.
 
 **Hablando de las Direcciones IP**
 
@@ -248,7 +248,7 @@ Una dirección IP no es más que un número único que se le asigna a cada compu
 
 ![Imagen 32](/img/blogs/windows-server-2012/Imagen32.png)
 
-Las direcciones IPv4 se expresan por un número binario de 32bits, permitiendo un espacio de direccionamiento de hasta 4 294 967 296 (2<sup>32</sup>) direcciones posibles, las direcciones IPv4 se pueden expresar como números de notación decimal, se dividen los 32bits en cuatro grubos divididos por puntos.
+Las direcciones IPv4 se expresan por un número binario de 32 bits, permitiendo un espacio de direccionamiento de hasta 4 294 967 296 (2<sup>32</sup>) direcciones posibles. Las direcciones IPv4 se pueden expresar como números de notación decimal; se dividen los 32 bits en cuatro grupos divididos por puntos.
 
 ![Imagen 33](/img/blogs/windows-server-2012/Imagen33.png)
 
@@ -271,11 +271,11 @@ Las direcciones IP que empiezen en su primer octeto con: **10, 172 o 192**, son 
 
 **Clases de Direcciones IP en las Privadas**
 
-En la **Clase A**, el primer grupo define la dirección de red, los siguientes tres grupos define los nodos ó host en la red.
+En la **Clase A**, el primer grupo define la dirección de red. Los siguientes tres grupos definen los nodos u hosts en la red.
 
-Em la **Clase B**, los dos primeros grupos definen la dirección de red, los dos siguientes definen la dirección de host.
+En la **Clase B**, los dos primeros grupos definen la dirección de red. Los dos siguientes definen la dirección de host.
 
-En la **Clase C**, los tres primeros grupos definen la dirección de red, y el último grupo define la direción de host.
+En la **Clase C**, los tres primeros grupos definen la dirección de red. Y el último grupo define la dirección de host.
 
 Para que se entienda más claro, en una **Clase C** yo puedo tener menos direcciones IP disponibles que en una **Clase B**, y ésta a su vez mucho menos a una **Clase A**.
 
@@ -293,9 +293,9 @@ Normalmente Los **ISP** (Internet Service Provider), proveedores de servicios de
 
 ![Imagen 38](/img/blogs/windows-server-2012/Imagen38.png)
 
-**Por que se esta migrando a IPv6**
+**Por qué se está migrando a IPv6**
 
-La Comporación de Inernet para la Asignación de Nombres y Números, en inglés **Internet Corporation for Assigned Names and Numbers (ICANN)**, es una organización sin fines de lucro, con el objetivo principal de encargarse de sierto números de tareas realizadas con anterioridad a esa fecha por otra organización que era la **IANA** sucede y radica en California y está sujeta a las leyes de dicho Estado, en pocas palabras **ICANN** es quien tiene el Almacén de direcciones IP, la fábrica de IP tiene muchas cajas de direcciones IP posibles.
+La Corporación de Internet para la Asignación de Nombres y Números, en inglés **Internet Corporation for Assigned Names and Numbers (ICANN)**, es una organización sin fines de lucro, con el objetivo principal de encargarse de cierto números de tareas realizadas anteriormente por otra organización que era la **IANA**. Sucede y radica en California y está sujeta a las leyes de dicho Estado. En pocas palabras, **ICANN** es quien tiene el Almacén de direcciones IP. La fábrica de IP tiene muchas cajas de direcciones IP posibles.
 
 ![Imagen 39](/img/blogs/windows-server-2012/Imagen39.png)
 
@@ -305,7 +305,7 @@ Una dirección IPv4, es una dirección IP de 32bits, y está clasificado o divid
 
 ![Imagen 40](/img/blogs/windows-server-2012/Imagen40.png)
 
-IPv6 es una dirección de ocho grupos de numeraciones divididas por dos putos, tienen 128bits.
+IPv6 es una dirección de ocho grupos de numeraciones divididas por dos puntos. Tienen 128 bits.
 
 ![Imagen 41](/img/blogs/windows-server-2012/Imagen41.png)
 
@@ -321,7 +321,7 @@ Hay que tener cuatro puntos bien claro:
 
 2. Ya teniendo en cuenta el punto **1**, cuando hay dos grupos de ceros consecutivos **( 0:0 )** se sintetiza a **( :: )**
 
-3. Otro punto a tener en cuenta es que, **NO** se permite tener dos resúmenes de ceros, o sea del punto tres de la imagen no se permite la segunda dirección IP, lo que nos deja como válido la primera dirección IP, sólo se debe sintetizar los ceros una vez.
+3. Otro punto a tener en cuenta es que, **NO** se permite tener dos resúmenes de ceros, o sea del punto tres de la imagen no se permite la segunda dirección IP. Lo que nos deja como válido la primera dirección IP. Sólo se debe sintetizar los ceros una vez.
 
 4. Cuando una dirección tiene tan solo cinco grupos de números como se ve en el punto **4** de la imagen, ya debemos darnos cuenta que nos hace falta tres grupos de números más para completar los ocho grupos que tiene una dirección IPv6, como podemos observar tenemos tres grupos más de ceros en la parte de los dos puntos, dos veces **( :: )**.
 
@@ -370,7 +370,7 @@ Un Arreglo de Disco **RAID** es un conjunto de discos que funcionan en un conjun
 
 ![Imagen mod03_img02](/img/blogs/windows-server-2012/mod03_img02.png)
 
-Esto implica, pricipalmente a que las **SAN** (Storage Área Network), Área de Red de Almacenamiento las cuales se encargan de distribuir las cargas sobre los Arreglos de Discos, otra versión de las **SAN** son las **NAS** (Network Attached Storage), Almacenamiento Conectado en Red.
+Esto implica, principalmente a que las **SAN** (Storage Área Network), Área de Red de Almacenamiento, las cuales se encargan de distribuir las cargas sobre los Arreglos de Discos. Otra versión de las **SAN** son las **NAS** (Network Attached Storage), Almacenamiento Conectado en Red.
 
 **Características principales de (RAID)**
 
@@ -428,7 +428,7 @@ Una máquina virtual no es más que un software **capaz de cargar en su interior
 
 La seguridad de informática, es el área de la informática que se enfoca en la protección de la infraestructura computacional y todo lo relacionado con esta, para ello existe una serie de estándares, métodos, reglas, herramientas, y leyes concebidas, para minimizar o mitigar los posibles riesgos a la información, la seguridad informática comprente, software, base de datos, meta datos, archivos, y todo lo que la organización valore activo y signifique un riesgo si esta llega a manos de otra persona, este tipo de información se conoce como información privilegiada ó confidencial.
 
-En pocas palabras todo lo que está en nuestro sistema operativo necesita estar salvaguardado para evitar que llegue a manos de alguien no deceado.
+En pocas palabras, todo lo que está en nuestro sistema operativo necesita estar salvaguardado para evitar que llegue a manos de alguien no deseado.
 
 ![Imagen mod03_img13](/img/blogs/windows-server-2012/mod03_img13.png)
 
@@ -440,7 +440,7 @@ Para la seguridad para los sistemas operativos, tenemos requisitos y caracterís
 
 **Roles a Servidores Remotos**
 
-Con el **Server Manager**, podemos hacer deploy en cualquier servidor de la red, con el solo hecho de agregarlo, podemos instalar cualquier rol ó característica de forma remota, por ejemplo si tenemos cinco servidores y todos tienen Windows Server 2012, de un servidor principal podemos instalar roles o características o actualizaciones, a otros servidores conectados en la red.
+Con el **Server Manager**, podemos hacer deploy en cualquier servidor de la red. Con el solo hecho de agregarlo, podemos instalar cualquier rol o característica de forma remota. Por ejemplo, si tenemos cinco servidores y todos tienen Windows Server 2012, de un servidor principal podemos instalar roles o características o actualizaciones a otros servidores conectados en la red.
 
 ![Imagen mod03_img15](/img/blogs/windows-server-2012/mod03_img15.png)
 

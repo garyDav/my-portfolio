@@ -52,7 +52,7 @@ npm i -D nodemon
 - .`gitignore`
 - avance.`md`
 
-#### Archivos acualizados:
+#### Archivos actualizados:
 
 - index.`js`
 - package.`json`
@@ -68,7 +68,7 @@ Usando Pug como Template Engine.
 - ./routes/products.`js`
 - ./views/products.`pug`
 
-#### Archivos acualizados:
+#### Archivos actualizados:
 
 - index.`js`
 
@@ -86,7 +86,7 @@ Bulma solo tiene CSS, lo que lo hace muy liviano a comparación de Bootstrap.
 - ./views/navbar.`pug`
 - ./views/layout.`pug`
 
-#### Archivos acualizados:
+#### Archivos actualizados:
 
 - ./views/products.`pug`
 
@@ -104,7 +104,7 @@ Implementando archivos estáticos.
 - ./public/logo/octolion@2x.`png`
 - ./public/favicon.`png`
 
-#### Archivos acualizados:
+#### Archivos actualizados:
 
 - index.`js`
 - ./views/layout.`pug`
@@ -118,7 +118,7 @@ Implementando archivos estáticos.
 
 Implementando la anatomía para una API REST-FULL.
 
-REST, estilo de arquitectura para Web services, no es un estandar pero si existe una especificación por Roy Fielding cofundador de Apache, HTTP Server y el director de Apache Software Fundation, y actualmente trabaja para Abode. Consiste en el envío y recivimiento de archivos `json` y `XML`, utiliza HTTP Verbs explícitamente (GET, POST, DELETE, etc...), también tiene un patrón de URI y está basado en directorios para las rutas.
+REST, estilo de arquitectura para Web services, no es un estándar pero si existe una especificación por Roy Fielding cofundador de Apache, HTTP Server y el director de Apache Software Foundation, y actualmente trabaja para Adobe. Consiste en el envío y recibimiento de archivos `json` y `XML`, utiliza HTTP Verbs explícitamente (GET, POST, DELETE, etc...), también tiene un patrón de URI y está basado en directorios para las rutas.
 
 ![HTTP Verbs](/img/blogs/ecommerce/verbs.png)
 
@@ -129,7 +129,7 @@ REST, estilo de arquitectura para Web services, no es un estandar pero si existe
 - ./routes/api/products.`js`
 - ./utils/mocks/products.`js`
 
-#### Archivos acualizados:
+#### Archivos actualizados:
 
 - index.`js`
 - ./routes/products.`js`
@@ -140,13 +140,13 @@ REST, estilo de arquitectura para Web services, no es un estandar pero si existe
 
 Implementando capa de servicio.
 
-Veremos una aquitectura que está basado en MVC.
+Veremos una arquitectura que está basada en MVC.
 
 La arquitectura MVC se quedó corto, autores como Taylor Otwell creador de Laravel, habla de que no es suficiente, MVC debería ser llamado: Separación de Problemas.
 
-Nuestro "Modelo" es parte del paquete "Librerías", este paquete es básicamente el que se encarga de conectarse con librerías externas, es decir: Base de datos, Base de datos de otros servicios, y otras APIs. La "Vista" realmente está representada por los datos que enviamos o recivimos que nos envía el "Controlador", la función de este "Controlador" es simplemente recivir y enviar datos a la "Vista". En éste caso nuestro "Controlador" está representado por los Middlewares y Router que implementamos, este "Controlador" también se encargan de las API que en este caso reciven y envían JSON. Y los **Servicios** es el corazón de nuestra aplicación, los servicios se encargan, no solo de llamar a las "Librerías", si no llamar a otros **Servicios**, básicamente la **Lógica de Negocios** centra en esta parte.
+Nuestro "Modelo" es parte del paquete "Librerías", este paquete es básicamente el que se encarga de conectarse con librerías externas, es decir: Base de datos, Base de datos de otros servicios, y otras APIs. La "Vista" realmente está representada por los datos que enviamos o recibimos que nos envía el "Controlador", la función de este "Controlador" es simplemente recibir y enviar datos a la "Vista". En éste caso nuestro "Controlador" está representado por los Middlewares y Router que implementamos, este "Controlador" también se encargan de las API que en este caso reciben y envían JSON. Y los **Servicios** es el corazón de nuestra aplicación, los servicios se encargan, no solo de llamar a las "Librerías", si no llamar a otros **Servicios**, básicamente la **Lógica de Negocios** centra en esta parte.
 
-Explicando el flujo: Sea que reciva una llamada por una **_View_** o un **_API_** el **_Controllers_** recive ésta información y su única tarea es pasarle ésta información a los **_Services_**, éstos Servicios deciden que hacer con esto, ya sea llamar a ótros Servicios, si van aplicar una Logica de Negocios, si van aplicar Reglas de Seguridad, etc., y cuándo yá tengan claro eso, ésos Servicios llaman a las **_Libraries (Lib)_**, la lógica que deberían tener las Librerías es exclusívamente para el consumo de Datos, puede que llame a las Librerías de MongoDB, en Firebase, ó para llamar a otra API que séa posible. Ésto es básicamente la arquitectura.
+Explicando el flujo: Sea que reciba una llamada por una **_View_** o un **_API_** el **_Controllers_** recibe ésta información y su única tarea es pasarle ésta información a los **_Services_**, éstos Servicios deciden que hacer con esto, ya sea llamar a otros Servicios, si van aplicar una Lógica de Negocios, si van aplicar Reglas de Seguridad, etc., y cuándo ya tengan claro eso, ésos Servicios llaman a las **_Libraries (Lib)_**, la lógica que deberían tener las Librerías es exclusivamente para el consumo de Datos, puede que llame a las Librerías de MongoDB, en Firebase, ó para llamar a otra API que sea posible. Ésto es básicamente la arquitectura.
 
 ![Capas MVC](/img/blogs/ecommerce/MVC.png)
 
@@ -166,7 +166,7 @@ npm uninstall -S body-parse
 
 - ./services/products.`js`
 
-#### Archivos acualizados:
+#### Archivos actualizados:
 
 - ./routes/api/products.`js`
 - ./routes/products.`js`
@@ -178,7 +178,7 @@ npm uninstall -S body-parse
 
 Recapitulando el proyecto, cambiamos la estructura del proyecto y añadimos comentarios.
 
-#### Archivos acualizados:
+#### Archivos actualizados:
 
 - index.`js`
 - ./routes/views/products.`js`
@@ -188,7 +188,7 @@ Recapitulando el proyecto, cambiamos la estructura del proyecto y añadimos come
 
 ### 08MongoDBconnectionExpress
 
-Cómo conectarse a una instancia de MongoDB usando `mLab`, es un servicio de base de datos que nos ofrece conexiones a MongoDB, para ello lo que tenemos que hacer es:
+Cómo conectarse a una instancia de MongoDB usando `mLab`, es un servicio de base de datos que nos ofrece conexiones a MongoDB. Para ello, lo que tenemos que hacer es:
 
 - Crear una Cuenta.
 - Crear una Base de Datos.
@@ -198,15 +198,15 @@ Es importante que las credenciales de la cuenta de `mLab` las creemos usando apl
 
 Es importante que nuestro archivo `.env` no exista en nuestro repositorio de `github`, porque ahí tendremos toda la información necesaria, para conectarnos a nuestra `BD`.
 
-Actualmente `mlab` es parte de `MongoDB`, así que con nuestras credenciales ya creadas accedemos a `mongodb.com`, una vez dentro creamos un Cluster gratuino, cambiamos el nombre `Cluster0` por cualquiera, en mi caso será `ggary`.
+Actualmente `mlab` es parte de `MongoDB`, así que con nuestras credenciales ya creadas accedemos a `mongodb.com`, una vez dentro creamos un Cluster gratuito, cambiamos el nombre `Cluster0` por cualquiera, en mi caso será `ggary`.
 
 #### Configurando nuestro Cluster
 
 1. `Crear usuario`, en la parte del menú, accedemos a `Security->Database Access`, agregamos un nuevo usuario de la `BD`, en mi caso el usuario es `mgary`, estas credenciales lo usaremos en el archivo `.env`.
 
-2. `IP Address`, en la parte del menú, accedemos a `Security->Network Access`, añadimos un `IP Address`, pulsamos `ADD CURRENT IP ADDRESS`, nos genera una IP `0.0.0.0/0`, por medio de esta lista de IP Addresses accedemos a nuestro Cluster.
+2. `IP Address`, en la parte del menú, accedemos a `Security->Network Access`, añadimos un `IP Address`, pulsamos `ADD CURRENT IP ADDRESS`, nos genera una IP `0.0.0.0/0`, por medio de esta lista de IP Addresses accedemos a nuestro Clúster.
 
-3. `BD`, en la parte del menú, accedemos a `Atlas->Clusters`, nos aparecerá una lista de nuestros Clusters, en la que creamos precionamos `COLLECTIONS`, y creamos nuestra base de datos, para este proyecto será `octolion`, con la colección `products`.
+3. `BD`, en la parte del menú, accedemos a `Atlas->Clusters`, nos aparecerá una lista de nuestros Clústers, en la que creamos presionamos `COLLECTIONS`, y creamos nuestra base de datos, para este proyecto será `octolion`, con la colección `products`.
 
 #### Conectarse a nuestra `BD` del Cluster
 
@@ -218,7 +218,7 @@ Actualmente `mlab` es parte de `MongoDB`, así que con nuestras credenciales ya 
 
 ![shell-3](/img/blogs/ecommerce/shell/shell-3.png)
 
-Mi cadena de coneccción: `mongo "mongodb+srv://ggary-dy8z2.mongodb.net/test"  --username mgary`.
+Mi cadena de conexión: `mongo "mongodb+srv://ggary-dy8z2.mongodb.net/test"  --username mgary`.
 
 ![shell-4](/img/blogs/ecommerce/shell/shell-4.png)
 
@@ -238,7 +238,7 @@ Mostramos las `BD`.
 
 ![studio-2](/img/blogs/ecommerce/studio3T/studio-2.png)
 
-Al copiar la cadena de conección: `mongodb+srv://mgary:<password>@ggary-dy8z2.mongodb.net/test`.
+Al copiar la cadena de conexión: `mongodb+srv://mgary:<password>@ggary-dy8z2.mongodb.net/test`.
 
 Añadimos la contraseña del usuario `ggary` y pegamos en Studio 3T: `New Connection->From URI...`.
 
@@ -254,13 +254,13 @@ No olvidemos cambiar por la contraseña correcta.
 
 ![studio-7](/img/blogs/ecommerce/studio3T/studio-7.png)
 
-Todos estos datos anteriores debería hallar por defecto, una vez terminado, precionamos en `Test Connection` para asegurarnos que la conección tiene éxito.
+Todos estos datos anteriores debería hallar por defecto. Una vez terminado, presionamos en `Test Connection` para asegurarnos que la conexión tiene éxito.
 
 ![studio-8](/img/blogs/ecommerce/studio3T/studio-8.png)
 
 ![studio-9](/img/blogs/ecommerce/studio3T/studio-9.png)
 
-Como la conección fue exitosa nos muestra las `BD` de nuestro Cloud.
+Como la conexión fue exitosa nos muestra las `BD` de nuestro Cloud.
 
 ![studio-10](/img/blogs/ecommerce/studio3T/studio-10.png)
 
@@ -304,9 +304,9 @@ npm i -S mongodb
 - ./.`env.example`
 - ./.`env`
 - ./config/index.`js`
-- ./lig/mongo.`js`
+- ./lib/mongo.`js`
 
-#### Archivos acualizados:
+#### Archivos actualizados:
 
 - ./avance.`md`
 - ./.`gitignore`
@@ -316,11 +316,11 @@ npm i -S mongodb
 
 ### 10ImplementingCRUD
 
-Implementamos acciones CRUD de mongo DB y lo utilizamos en nuetro servicio, para realizar la prueba utilizamos `postman`.
+Implementamos acciones CRUD de MongoDB y lo utilizamos en nuestro servicio, para realizar la prueba utilizamos `postman`.
 
 ![CRUD-MongoDB](/img/blogs/ecommerce/CRUD-MongoDB.png)
 
-#### Archivos acualizados:
+#### Archivos actualizados:
 
 - ./avance.`md`
 - ./lib/mongo.`js`
@@ -362,7 +362,7 @@ Pero lo más importante del middleware es, siempre llamar a la función `next()`
 
 - Lo veremos en el siguiente apartado.
 
-#### Archivos acualizados:
+#### Archivos actualizados:
 
 - ./avance.`md`
 
@@ -379,7 +379,7 @@ Las mejores formas de manejar errores en express es usando un middleware.
 - ./utils/middlewares/errorsHandlers.`js`
 - ./views/error.`pug`
 
-#### Archivos acualizados:
+#### Archivos actualizados:
 
 - ./avance.`md`
 - ./routes/api/products.`js`
@@ -402,7 +402,7 @@ En `check` diremos que parte del `request` vamos a validar, por defecto es `body
 
 Luego veremos como utilizar `joi` para nuestro middleware de validación, y como utilizar `boom` para nuestros middlewares de errores.
 
-#### Archivos acualizados:
+#### Archivos actualizados:
 
 - ./avance.`md`
 
@@ -435,7 +435,7 @@ npm i -S boom
 - `boom` ./utils/isRequestAjaxOrAPI.`js`
 - `boom` ./views/404.pug
 
-#### Archivos acualizados:
+#### Archivos actualizados:
 
 - ./avance.`md`
 - `joi` ./utils/middlewares/validationHandler.`js`
@@ -500,7 +500,7 @@ npm i -D chalk
 
 - ./utils/auth/strategies/jwt.`js`
 
-#### Archivos acualizados:
+#### Archivos actualizados:
 
 - ./.`env.example`
 - ./.`env`
@@ -540,7 +540,7 @@ npm i -D supertest mocha sinon proxyquire
 - ./test/services.products.test.`js`
 - ./test/utils.isRequestAjaxOrApi.test.js
 
-#### Archivos acualizados:
+#### Archivos actualizados:
 
 - ./package.`json`
 - ./routes/api/products.`js`
@@ -563,7 +563,7 @@ npm i -S debug
 
 #### Archivos añadidos:
 
-#### Archivos acualizados:
+#### Archivos actualizados:
 
 - ./package.`json`
 - ./index.`js`
@@ -586,7 +586,7 @@ npm i -S debug
 
 ##### body-parser:
 
-No solo nos permite transformar `body` a tipo `json`, tambén recibe `row`, puede ser un buffer, un binario, también recibe texto y url encode.
+No solo nos permite transformar `body` a tipo `json`, también recibe `raw`, puede ser un buffer, un binario, también recibe texto y url encode.
 
 ##### cors:
 

@@ -43,7 +43,7 @@ Primeramente por popularidad según la [Encuesta 2024](https://2024.stateofjs.co
 
 > ¿Eso que quiere decir?. Sí mas gente lo está usando, pues hay mas trabajos que lo requieren.
 
-TypeScript fué creado por Microsoft por el **2012**, claro que pasaron varios años trabajandolo.
+TypeScript fue creado por Microsoft por el **2012**. Claro que pasaron varios años trabajándolo.
 
 Justamente nació de la necesidad de realizar proyectos mucho mas grandes y fiarnos de **JavaScript** no era lo mas viable, se necesita un grado de seguridad poder trabajar con este lenguaje. Como tal **JavaScript** en un lenguaje **débil y dinámica**.
 

@@ -43,7 +43,7 @@ Pasos a tomar en cuenta:
 
 - (Opcional) Instalar [Vysor](https://www.vysor.io/) para compartir pantalla del celular físico a Windows 11 por USB.
 
-- (Opcional) Instalar [Scrcpy](https://github.com/genymobile/scrcpy) otra aplicación, software libre para compartir pantalla de celular a Windows por USB.
+- (Opcional) Instalar [Scrcpy](https://github.com/genymobile/scrcpy), otra aplicación, software libre para compartir pantalla de celular a Windows por USB.
 
 - Escanear el código QR (desde la app expo go) que se muestra en la terminal o en el navegador para abrir la aplicación en el dispositivo móvil.
 
@@ -128,7 +128,7 @@ Abrir desde el siguiente enlace: [Android Environment Setup](https://docs.expo.d
 
 - Se puede escoger a partir de la lista de dispositivos predefinidos o crear uno personalizado.
 
-- Podemos crear "New Hardware Profile" -> con nombre "Pixel Pro XL" -> Screen size "6,8 o 6.8 inch" Resolution "1344 x 2992 px" -> RAM "4 GB" -> "No Skin" -> "Finish".
+- Podemos crear "New Hardware Profile" -> con nombre "Pixel Pro XL" -> Screen size "6.8 inch" -> Resolution "1344 x 2992 px" -> RAM "4 GB" -> "No Skin" -> "Finish".
 
 - Seleccionamos "Pixel Pro XL" y luego "Next" -> Utilizar una versión estable del S.O. -> "Next" -> dejamos el AVD name -> Graphics "Hardware" utiliza tarjeta de video -> habilitar "Show advance settings" -> asignar "RAM", Internal storage "5 GB" -> "Finish".
 

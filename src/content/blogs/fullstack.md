@@ -8,7 +8,7 @@ readtime: 720
 
 #### ©️ Por: Ing. Gary Guzmán
 
-###### [👨‍💻 Repositorio](https://github.com/garyDav/Blogs/blob/master/WindowsServer2012/teoria.md) mis resúmenes por [@garyDav](https://github.com/garyDav)
+###### [👨‍💻 Repositorio](https://github.com/garyDav/Blogs/blob/master/FullStack/teoria.md) mis resúmenes por [@garyDav](https://github.com/garyDav)
 
 > 🗓️ Publicado, 12 de agosto del 2025
 
@@ -129,9 +129,9 @@ Con estas Tres tecnologías, se creó la primera pagina Web: http://line-mode.ce
 
 </center>
 
-Por eso, surgió la necesidad la aparencia de los sitios Web, naciendo en 1994 el primer borrador del **CSS** (Cascade Style Sheets).
+Por eso, surgió la necesidad la aparición de los sitios Web. Naciendo en 1994 el primer borrador del **CSS** (Cascading Style Sheets).
 
-**CSS** son unas series de reglas que describen la aparencia de una página web, incluido los colores, la tipografía, el margen y el tamaño de los elementos, inclusive adaptanto la página web a pantallas grandes o pequeñas, esto es conocido como **Responsive Design**.
+**CSS** son unas series de reglas que describen la aparencia de una página web, incluido los colores, la tipografía, el margen y el tamaño de los elementos, inclusive adaptando la página web a pantallas grandes o pequeñas. Esto es conocido como **Responsive Design**.
 
 <center>
 
@@ -172,7 +172,7 @@ Es un lenguaje que permite crear páginas web con un diseño agradable a los usu
 
 - **DOM:** Document Object Model. Es una transformación del código HTML escrito por nosotros a objetos entendibles para el navegador.
 
-- **CSSOM:** así como el DOM para el HTML, EL CSSOM es una representación de objetos de nuestros estilos en CSS.
+- **CSSOM:** así como el DOM para el HTML, el CSSOM es una representación de objetos de nuestros estilos en CSS.
 
 - **Render Tree:** es la unión entre el DOM y el CSSOM para renderizar todo el código de nuestra página web.
 
