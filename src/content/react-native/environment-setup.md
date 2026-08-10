@@ -52,8 +52,12 @@ Pasos a tomar en cuenta:
 Necesitamos exponer el puerto de la aplicación que corre dentro de WSL hacia la red local de Windows 11, para que otros dispositivos puedan acceder a ella. Para esto, podemos usar `netsh` en Windows para crear un portproxy y una regla de firewall.
 
 ```bash
-# Desde Powershell de Windows en modo administrador.
+# Desde Powershell de Windows en modo administrador, eliminamos la regla portproxy.
+netsh interface portproxy delete v4tov4 listenaddress=192.168.100.116 listenport=8081
+
+# Desde Powershell de Windows en modo administrador, creamos la nueva regla portproxy.
 netsh interface portproxy add v4tov4 listenaddress=192.168.100.116 listenport=8081 connectaddress=172.26.93.199 connectport=8081
+
 # 192.168.100.116: IP pública de tu máquina Windows (puedes obtenerla con `ipconfig` dentro la terminal)
 # 172.26.93.199: IP interna de WSL (puedes obtenerla con `ip addr show eth0` dentro de WSL)
 ```

@@ -29,7 +29,7 @@ Instalamos con el siguiente comando:
 
 ```bash
 # Instalar Expo CLI
-pnpx create-expo-app@latest counter-app --template blank-typescript
+pnpm create-expo-app@latest counter-app --template blank-typescript
 # Renombrar el proyecto
 mv counter-app 03-counter-app
 # Ingresar al proyecto
