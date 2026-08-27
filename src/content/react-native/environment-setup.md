@@ -15,39 +15,57 @@ readtime: 60
 
 #### Contenido de la materia
 
-1. [**Crear Proyecto**](#crear-proyecto)
-   - [**Si estamos en WSL**](#si-estamos-en-wsl)
-   - [**Correr la aplicación desde Expo Go**](#correr-la-aplicación-desde-expo-go)
-   - [**Para la primera vez ejecutar en Android**](#para-la-primera-vez-ejecutar-en-android)
-
-2. [**Configurar Android Environment**](#configurar-android-environment)
-   - [**Para correr WSL con Android Emulator desde Windows**](#para-correr-wsl-con-android-emulator-desde-windows)
+---
 
 # Expo React Native
 
-## Crear Proyecto
+## Configura tu Android
 
-Referencia: [Docs Expo App](https://docs.expo.dev/)
+- Entrar ajustes del dispositivo móvil.
 
-```bash
-pnpm create expo-app@latest testing-app --template blank-typescript
-# Escoger la versión: For learning with Expo Go (SDK 54)
-cd testing-app
-pnpm install
-pnpm start
-```
+- Buscar la sección de teléfono o información del dispositivo.
 
-Pasos a tomar en cuenta:
+- Presionar varias veces sobre el número de compilación o versión para activar las opciones de desarrollador.
 
-- Instalar Expo Go en el dispositivo móvil.
+- Volver a ajustes y buscar la sección de opciones de desarrollador.
 
-- (Opcional) Instalar [Vysor](https://www.vysor.io/) para compartir pantalla del celular físico a Windows 11 por USB.
+- Activar la opción de "Depuración USB" o "Debugging USB".
 
-- (Opcional) Instalar [Scrcpy](https://github.com/genymobile/scrcpy), otra aplicación, software libre para compartir pantalla de celular a Windows por USB.
+- Activar la opción de "Instalar aplicaciones desde USB" o "Install apps via USB".
 
-- Escanear el código QR (desde la app expo go) que se muestra en la terminal o en el navegador para abrir la aplicación en el dispositivo móvil.
+- Activar la opción de "Depuración USB (ajustes de seguridad)" o "USB debugging (Security settings)".
 
-### Si estamos en WSL
+- Desactivar la opción de "Verificar aplicaciones por USB" o "Verify apps over USB".
+
+## Configurar Android Studio
+
+Abrir desde el siguiente enlace: [Android Environment Setup](https://docs.expo.dev/get-started/set-up-your-environment)
+
+**Configurar Android SDK Platform**
+
+![Android SDK Platform](/img/blogs/react-native/sub/android_sdk_platform.png)
+
+**Configurar Android SDK Tools**
+
+![Android SDK Tools](/img/blogs/react-native/sub/android_sdk_tools.png)
+
+## Configurar Variables de Entorno desde Windows
+
+1. Busca `Variables de entorno`
+
+2. Desde `Propiedades del Sistema` -> `Variables de entorno`
+
+3. Se divide en dos, `Variables de Usuario` y `Variables del Sistema`
+
+4. Desde la sección `Variables del Sistema` -> `Nuevo`
+
+5. Crea una variable llamada: `ANDROID_HOME` con el valor: `C:\Users\[TU-USUARIO]\AppData\Local\Android\Sdk`
+
+6. Desde la misma sección, selecciona `Path` -> `Editar`
+
+7. En la ventana emergente presiona `Nuevo` por cada una de estas variables: `%ANDROID_HOME%\emulator`, `%ANDROID_HOME%\platform-tools`, `%ANDROID_HOME%\tools`, `%ANDROID_HOME%\tools\bin`
+
+## Añadir Proxy desde Windows a WSL
 
 Necesitamos exponer el puerto de la aplicación que corre dentro de WSL hacia la red local de Windows 11, para que otros dispositivos puedan acceder a ella. Para esto, podemos usar `netsh` en Windows para crear un portproxy y una regla de firewall.
 
@@ -74,69 +92,7 @@ netsh advfirewall firewall show rule name="Aplicación Expo"
 
 Ese comando agrega una **regla al firewall de Windows** que permite explícitamente el tráfico entrante TCP en el puerto `8081`. En detalle: se crea una regla llamada _“Aplicación Expo”_ con dirección de entrada (`dir=in`), acción de permitir (`action=allow`), protocolo TCP y puerto local `8081`. El objetivo es que las conexiones externas hacia tu máquina no sean bloqueadas por el firewall, garantizando que el servicio de Expo que corre en ese puerto pueda ser accedido desde otros dispositivos de la red.
 
-### Correr la aplicación desde Expo Go
-
-Una vez que la aplicación esté corriendo, se mostrará un código QR en la terminal o en el navegador. Para abrir la aplicación en el dispositivo móvil, sigue estos pasos:
-
-1. Desde WSL instalar: `pnpm add expo-cli -g` y aprobar los post scripts: `pnpm approve-builds -g`.
-
-2. Cambiar la ip que expondrá la aplicación, la IP de Windows: `set -gx REACT_NATIVE_PACKAGER_HOSTNAME 192.168.100.116`.
-
-3. Ejecutar la aplicación: `pnpm start`.
-
-4. Abre la aplicación **Expo Go** en tu dispositivo móvil.
-
-5. En la pantalla principal de Expo Go, selecciona la opción **"Scan QR Code"** (Escanear código QR).
-
-6. Apunta la cámara de tu dispositivo móvil hacia el código QR que se muestra en la terminal.
-
-7. La aplicación Expo Go reconocerá el código QR y te preguntará si deseas abrir la aplicación. Confirma para abrirla.
-
-8. También puedes abrir la aplicación manualmente ingresando la URL que se muestra en la terminal (por ejemplo, `exp://192.168.100.116:8081`).
-
-### Para la primera vez ejecutar en Android
-
-- Entrar ajustes del dispositivo móvil.
-
-- Buscar la sección de teléfono o información del dispositivo.
-
-- Presionar varias veces sobre el número de compilación o versión para activar las opciones de desarrollador.
-
-- Volver a ajustes y buscar la sección de opciones de desarrollador.
-
-- Activar la opción de "Depuración USB" o "Debugging USB".
-
-- Activar la opción de "Instalar aplicaciones desde USB" o "Install apps via USB".
-
-- Activar la opción de "Depuración USB (ajustes de seguridad)" o "USB debugging (Security settings)".
-
-- Desactivar la opción de "Verificar aplicaciones por USB" o "Verify apps over USB".
-
-## Configurar Android Environment
-
-Abrir desde el siguiente enlace: [Android Environment Setup](https://docs.expo.dev/get-started/set-up-your-environment)
-
-**Configurar Android SDK Platform**
-
-![Android SDK Platform](/img/blogs/react-native/sub/android_sdk_platform.png)
-
-**Configurar Android SDK Tools**
-
-![Android SDK Tools](/img/blogs/react-native/sub/android_sdk_tools.png)
-
-**Desde Android Studio**
-
-- Abrir Android Studio y seleccionar "More Actions" -> "Virtual Device Manager".
-
-- Crear un nuevo dispositivo virtual (AVD) con la imagen del sistema Android que deseas emular.
-
-- Se puede escoger a partir de la lista de dispositivos predefinidos o crear uno personalizado.
-
-- Podemos crear "New Hardware Profile" -> con nombre "Pixel Pro XL" -> Screen size "6.8 inch" -> Resolution "1344 x 2992 px" -> RAM "4 GB" -> "No Skin" -> "Finish".
-
-- Seleccionamos "Pixel Pro XL" y luego "Next" -> Utilizar una versión estable del S.O. -> "Next" -> dejamos el AVD name -> Graphics "Hardware" utiliza tarjeta de video -> habilitar "Show advance settings" -> asignar "RAM", Internal storage "5 GB" -> "Finish".
-
-### Para correr WSL con Android Emulator desde Windows
+## Utilizar __ADB__ de Windows para WSL
 
 Una opción es instalar todo el entorno en WSL, siguiendo estos pasos: [Ver video de YouTube](https://www.youtube.com/watch?v=XJ0dI2SYHIE)
 
@@ -187,3 +143,58 @@ pnpm start
 # Si no funciona, ejecutar el siguiente comando para forzar la red interna
 pnpm start --tunnel
 ```
+
+## Crear Proyecto
+
+Referencia: [Docs Expo App](https://docs.expo.dev/)
+
+```bash
+pnpm create expo-app@latest testing-app --template blank-typescript
+# Escoger la versión: For learning with Expo Go (SDK 54)
+cd testing-app
+pnpm install
+pnpm start
+```
+
+Pasos a tomar en cuenta:
+
+- Instalar Expo Go en el dispositivo móvil.
+
+- (Opcional) Instalar [Vysor](https://www.vysor.io/) para compartir pantalla del celular físico a Windows 11 por USB.
+
+- (Opcional) Instalar [Scrcpy](https://github.com/genymobile/scrcpy), otra aplicación, software libre para compartir pantalla de celular a Windows por USB.
+
+- Escanear el código QR (desde la app expo go) que se muestra en la terminal o en el navegador para abrir la aplicación en el dispositivo móvil.
+
+## Correr la aplicación desde Expo Go
+
+Una vez que la aplicación esté corriendo, se mostrará un código QR en la terminal o en el navegador. Para abrir la aplicación en el dispositivo móvil, sigue estos pasos:
+
+1. Desde WSL instalar: `pnpm add expo-cli -g` y aprobar los post scripts: `pnpm approve-builds -g`.
+
+2. Cambiar la ip que expondrá la aplicación, la IP de Windows: `set -gx REACT_NATIVE_PACKAGER_HOSTNAME 192.168.100.116`.
+
+3. Ejecutar la aplicación: `pnpm start`.
+
+4. Abre la aplicación **Expo Go** en tu dispositivo móvil.
+
+5. En la pantalla principal de Expo Go, selecciona la opción **"Scan QR Code"** (Escanear código QR).
+
+6. Apunta la cámara de tu dispositivo móvil hacia el código QR que se muestra en la terminal.
+
+7. La aplicación Expo Go reconocerá el código QR y te preguntará si deseas abrir la aplicación. Confirma para abrirla.
+
+8. También puedes abrir la aplicación manualmente ingresando la URL que se muestra en la terminal (por ejemplo, `exp://192.168.100.116:8081`).
+
+## Crear Emulador Desde Android Studio
+
+- Abrir Android Studio y seleccionar "More Actions" -> "Virtual Device Manager".
+
+- Crear un nuevo dispositivo virtual (AVD) con la imagen del sistema Android que deseas emular.
+
+- Se puede escoger a partir de la lista de dispositivos predefinidos o crear uno personalizado.
+
+- Podemos crear "New Hardware Profile" -> con nombre "Pixel Pro XL" -> Screen size "6.8 inch" -> Resolution "1344 x 2992 px" -> RAM "4 GB" -> "No Skin" -> "Finish".
+
+- Seleccionamos "Pixel Pro XL" y luego "Next" -> Utilizar una versión estable del S.O. -> "Next" -> dejamos el AVD name -> Graphics "Hardware" utiliza tarjeta de video -> habilitar "Show advance settings" -> asignar "RAM", Internal storage "5 GB" -> "Finish".
+
