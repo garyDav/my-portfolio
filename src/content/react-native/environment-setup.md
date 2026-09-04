@@ -15,6 +15,15 @@ readtime: 60
 
 #### Contenido de la materia
 
+1. [**Configura tu Android**](#configura-tu-android)
+2. [**Configurar Android Studio**](#configurar-android-studio)
+3. [**Configurar Variables de Entorno desde Windows**](#configurar-variables-de-entorno-desde-windows)
+4. [**Añadir Proxy desde Windows a WSL**](#añadir-proxy-desde-windows-a-wsl)
+5. [**Utilizar **ADB** de Windows para WSL**](#utilizar-adb-de-windows-para-wsl)
+6. [**Crear Proyecto**](#crear-proyecto)
+7. [**Correr la aplicación desde Expo Go**](#correr-la-aplicación-desde-expo-go)
+8. [**Crear Emulador Desde Android Studio**](#crear-emulador-desde-android-studio)
+
 ---
 
 # Expo React Native
@@ -92,7 +101,7 @@ netsh advfirewall firewall show rule name="Aplicación Expo"
 
 Ese comando agrega una **regla al firewall de Windows** que permite explícitamente el tráfico entrante TCP en el puerto `8081`. En detalle: se crea una regla llamada _“Aplicación Expo”_ con dirección de entrada (`dir=in`), acción de permitir (`action=allow`), protocolo TCP y puerto local `8081`. El objetivo es que las conexiones externas hacia tu máquina no sean bloqueadas por el firewall, garantizando que el servicio de Expo que corre en ese puerto pueda ser accedido desde otros dispositivos de la red.
 
-## Utilizar __ADB__ de Windows para WSL
+## Utilizar **ADB** de Windows para WSL
 
 Una opción es instalar todo el entorno en WSL, siguiendo estos pasos: [Ver video de YouTube](https://www.youtube.com/watch?v=XJ0dI2SYHIE)
 
@@ -197,4 +206,3 @@ Una vez que la aplicación esté corriendo, se mostrará un código QR en la ter
 - Podemos crear "New Hardware Profile" -> con nombre "Pixel Pro XL" -> Screen size "6.8 inch" -> Resolution "1344 x 2992 px" -> RAM "4 GB" -> "No Skin" -> "Finish".
 
 - Seleccionamos "Pixel Pro XL" y luego "Next" -> Utilizar una versión estable del S.O. -> "Next" -> dejamos el AVD name -> Graphics "Hardware" utiliza tarjeta de video -> habilitar "Show advance settings" -> asignar "RAM", Internal storage "5 GB" -> "Finish".
-
