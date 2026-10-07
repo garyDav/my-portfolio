@@ -200,7 +200,7 @@ Pasos a realizar:
   export default CalculatorApp;
   ```
 
-Guardar el commmit con el mensaje: **"Expo Router: Layout e index, limpiar archivos innecesarios"**
+Guardar el commit con el mensaje: **"Expo Router: Layout e index, limpiar archivos innecesarios"**
 
 ## Segundo Commit: Diseño inicial
 
@@ -253,7 +253,7 @@ Guardar el commmit con el mensaje: **"Expo Router: Layout e index, limpiar archi
   ...
   ```
 
-Guardar el commmit con el mensaje: **"Diseño inicial: Fuentes personalizadas, primeros estilos"**
+Guardar el commit con el mensaje: **"Diseño inicial: Fuentes personalizadas, primeros estilos"**
 
 ## Tercer Commit: Estilos globales
 
@@ -328,7 +328,7 @@ Guardar el commmit con el mensaje: **"Diseño inicial: Fuentes personalizadas, p
   };
   ```
 
-Guardar el commmit con el mensaje: **"Estilos globales: para \_layout e index"**
+Guardar el commit con el mensaje: **"Estilos globales: para \_layout e index"**
 
 ## Cuarto Commit: Custom text
 
@@ -375,7 +375,7 @@ Guardar el commmit con el mensaje: **"Estilos globales: para \_layout e index"**
   };
   ```
 
-Guardar el commmit con el mensaje: **"Custom Text: Components + Defult Props"**
+Guardar el commit con el mensaje: **"Custom Text: Components + Defult Props"**
 
 ## Quinto Commit: Botones
 
