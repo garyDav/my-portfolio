@@ -85,6 +85,9 @@ netsh interface portproxy delete v4tov4 listenaddress=192.168.100.116 listenport
 # Desde Powershell de Windows en modo administrador, creamos la nueva regla portproxy.
 netsh interface portproxy add v4tov4 listenaddress=192.168.100.116 listenport=8081 connectaddress=172.26.93.199 connectport=8081
 
+# Probar proxy
+Test-NetConnection 192.168.100.116 -Port 8081
+
 # 192.168.100.116: IP pública de tu máquina Windows (puedes obtenerla con `ipconfig` dentro la terminal)
 # 172.26.93.199: IP interna de WSL (puedes obtenerla con `ip addr show eth0` dentro de WSL)
 ```
