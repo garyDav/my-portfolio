@@ -390,7 +390,223 @@ Guardar el commit con el mensaje: **"Custom Text: Components + Defult Props"**
           <ThemeText variant="h1">50 x 500000000000000</ThemeText>
           <ThemeText variant="h2">2500</ThemeText>
         </View>
+
+        {/* Filas de botones */}
+        <View style={globalStyles.row}>{/* Botón 1 */}</View>
       </View>
     );
   };
   ```
+
+  > Para esto debemos añadir `row` a mis estilos globales
+
+- En `./src/styles/global-styles.ts`
+
+  ```ts
+  export const globalStyles = StyleSheet.create({
+    ...
+    row: {
+      flexDirection: 'row',
+      justifyContent: 'center',
+      marginBottom: 18,
+      paddingHorizontal: 10,
+    },
+  });
+  ```
+
+- En `./src/components/CalculatorButton.tsx`
+
+  ```tsx
+  import { Pressable } from 'react-native';
+
+  interface Props {
+    label: string;
+  }
+
+  const CalculatorButton = ({ label }: Props) => {
+    return (
+      <Pressable>
+        <Text style={{ color: 'white' }}>{label}</Text>
+      </Pressable>
+    );
+  };
+  ```
+
+  > Luego añado este componente a mi `index`
+
+- En `./src/app/index.tsx` modificar:
+
+  ```tsx
+  ...
+
+  const CalculatorApp = () => {
+    return (
+      <View style={globalStyles.calculatorContainer}>
+        ...
+        {/* Filas de botones */}
+        <View style={globalStyles.row}>
+          {/* Botón 1 */}
+          <CalculatorButton label="C" />
+          <CalculatorButton label="+/-" />
+          <CalculatorButton label="del" />
+          <CalculatorButton label="÷" />
+        </View>
+      </View>
+    );
+  };
+  ```
+
+  > Con este paso verificamos que el componente funciona y recibe sus parámetros
+
+- En `./src/styles/global-styles.ts`
+
+  ```ts
+  export const globalStyles = StyleSheet.create({
+    ...
+    button: {
+      height: 80,
+      width: 80,
+      backgroundColor: Colors.darkGray,
+      borderRadius: 100,
+      justifyContent: 'center',
+      marginHorizontal: 10,
+    },
+
+    buttonText: {
+      textAlign: 'center',
+      padding: 10,
+      fontSize: 30,
+      color: Colors.textPrimary,
+      fontWeight: '300',
+      fontFamily: 'SpaceMono',
+    }
+  });
+  ```
+
+  > Luego añadirmos este estilo al compomente `CalculatorButton.tsx`
+
+- En `./src/components/CalculatorButton.tsx`
+
+  ```tsx
+  ...
+
+  const CalculatorButton = ({ label }: Props) => {
+    return (
+      <Pressable style={globalStyles.button}>
+        <Text style={globalStyles.buttonText}>{label}</Text>
+      </Pressable>
+    )
+  }
+  ```
+
+  > Probamos como queda, luego procedemos a pensar que debemos recibir una propiedad para cambiar el color de fondo, de texto, y el evento.
+
+- En `./src/components/CalculatorButton.tsx`
+
+  ```tsx
+  ...
+  interface Props {
+    label: string;
+    color?: string;
+    blackText?: boolean;
+    onPress: () => void;
+  }
+
+  const CalculatorButton = ({
+    label,
+    color = Colors.darkGray,
+    blackText = false,
+    onPress,
+  }: Props) => {
+    return (
+      <Pressable style={globalStyles.button}>
+        <Text
+          style={{
+            ...globalStyles.buttonText,
+            color: blackText ? 'black': 'white',
+          }}
+        >{label}</Text>
+      </Pressable>
+    )
+  }
+  ```
+
+  > Añadimos las nuevas propiedades al archivo `ìndex`
+
+- En `./src/app/index.tsx` modificar:
+
+  ```tsx
+  ...
+
+  const CalculatorApp = () => {
+    return (
+      <View style={globalStyles.calculatorContainer}>
+        ...
+        {/* Filas de botones */}
+        <View style={globalStyles.row}>
+          {/* Botón 1 */}
+          <CalculatorButton label="C" blackText color={Colors.lightGray} onPress={() => console.log('C')} />
+          <CalculatorButton label="+/-" blackText color={Colors.lightGray} onPress={() => console.log('+/-')} />
+          <CalculatorButton label="del" blackText color={Colors.lightGray} onPress={() => console.log('del')} />
+          <CalculatorButton label="÷" blackText color={Colors.lightGray} onPress={() => console.log('÷')} />
+        </View>
+      </View>
+    );
+  };
+  ```
+
+Guardar el commit con el mensaje: **"Custom Button Calc 01: Componente + Props + Estilos personalizados"**
+
+## Sexto Commit: Botones parte 2
+
+- En `./src/components/CalculatorButton.tsx`
+
+  ```tsx
+  ...
+
+  const CalculatorButton = ({
+    label,
+    color = Colors.darkGray,
+    blackText = false,
+    onPress,
+  }: Props) => {
+    return (
+      <Pressable
+        style={({ pressed}) => ({
+          ...globalStyles.button,
+          backgroundColor: color,
+          opacity: pressed ? 0.8 : 1,
+        })}
+        onPress={onPress}
+      >
+        ...
+      </Pressable>
+    )
+  }
+  ```
+
+- En `./src/app/index.tsx` modificar:
+
+  ```tsx
+  ...
+
+  const CalculatorApp = () => {
+    return (
+      <View style={globalStyles.calculatorContainer}>
+        ...
+        {/* Filas de botones */}
+        <View style={globalStyles.row}>
+          {/* Botón 1 */}
+          ...
+          <CalculatorButton
+            label="÷"
+            color={Colors.orange}
+            onPress={() => console.log('÷')}
+          />
+        </View>
+      </View>
+    );
+  };
+  ```
+
+  > Luego duplicar cada `<View>...</View>` por cada línea hasta llegar `1 2 3 +`.
