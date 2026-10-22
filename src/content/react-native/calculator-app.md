@@ -17,6 +17,22 @@ readtime: 60
 
 1. [**Crear Proyecto**](#crear-proyecto)
 
+2. [**Estructura del Proyecto**](#estructura-del-proyecto)
+
+3. [**Primer Commit: Eliminar archivos innesesarios**](#primer-commit-eliminar-archivos-innesesarios)
+
+4. [**Segundo Commit: Diseño inicial**](#segundo-commit-diseño-inicial)
+
+5. [**Tercer Commit: Estilos globales**](#tercer-commit-estilos-globales)
+
+6. [**Cuarto Commit: Custom text**](#cuarto-commit-custom-text)
+
+7. [**Quinto Commit: Botones**](#quinto-commit-botones)
+
+8. [**Sexto Commit: Botones parte 2**](#sexto-commit-botones-parte-2)
+
+9. [**Séptimo Commit: Paquetes adicionales - Haptics y NavigationBar**](#séptimo-commit-paquetes-adicionales---haptics-y-navigationbar)
+
 # Calculadora con React Native
 
 ## Crear Proyecto
@@ -609,4 +625,223 @@ Guardar el commit con el mensaje: **"Custom Button Calc 01: Componente + Props +
   };
   ```
 
-  > Luego duplicar cada `<View>...</View>` por cada línea hasta llegar `1 2 3 +`.
+  > Luego duplicar cada `<View>...</View>` por cada línea hasta llegar `0 . =`, observamos que el cero ocupa dos posiciones.
+  > Podríamos crear una propiedad llamada `doubleSize` para indicar que el cero ocupa el doble de tamaño en `CalculatorButton`.
+
+- En `./src/components/CalculatorButton.tsx`
+
+  ```tsx
+  ...
+  interface Props {
+    ...
+    doubleSize?: boolean;
+    ...
+  }
+
+  const CalculatorButton = ({
+    ...
+    doubleSize = false,
+    ...
+  }: Props) => {
+    return (
+      <Pressable
+        style={({ pressed}) => ({
+          ...,
+          width: doubleSize ? 180 : 80,
+        })}
+        onPress={onPress}
+      >
+        ...
+      </Pressable>
+    )
+  }
+  ```
+
+Guardar el commit con el mensaje: **"Custom Button Calc 02: Componente + Props + Estilos personalizados"**
+
+## Séptimo Commit: Paquetes adicionales - Haptics y NavigationBar
+
+Para esta sección necesitaremos probarlo en nuestro celular físico.
+
+Para realizar el efecto de que el botón haya sido tocado y en `Android` para modificar la barra inferior, necesitaremos de algunas dependencias, las cuales serán: [Expo Haptics](https://docs.expo.dev/versions/latest/sdk/haptics/) y [Expo Navigation Bar](https://docs.expo.dev/versions/latest/sdk/navigation-bar/)
+
+- Primero implementaremos `Expo Navigation Bar`:
+
+```bash
+# En la terminal, puede que tengan que hacer reload
+pnpm expo install expo-navigation-bar
+```
+
+- En `./app.json` añadir o modificar:
+
+```json
+{
+  "expo": {
+    "plugins": [
+      [
+        "expo-navigation-bar",
+        {
+          "enforceContrast": true,
+          "hidden": false,
+          "style": "dark"
+        }
+      ]
+    ]
+  }
+}
+```
+
+- En `./src/app/_layout.tsx` modificar:
+
+  ```tsx
+  ...
+  import { NavigationBar } from 'expo-navigation-bar';
+
+  const isAndroid = Platform.OS === 'android';
+
+  if (isAndroid) {
+    NavigationBar.setBackgroundColorAsync('black');
+  }
+
+  const RootLayout = () => {
+    return (
+      <View>
+        ...
+
+        <NavigationBar style="dark" />
+      </View>
+    );
+  };
+
+  export default RootLayout;
+  ```
+
+- Ahora implementamos `Expo Haptics`:
+
+```bash
+# En la terminal, puede que tengan que hacer reload
+pnpm expo install expo-haptics
+```
+
+- En `./src/components/CalculatorButton.tsx`
+
+  ```tsx
+  ...
+  import * as Haptics from 'expo-haptics';
+
+  const CalculatorButton = ({
+    ...
+  }: Props) => {
+    return (
+      <Pressable
+        ...
+        onPress={() => {
+          // TODO: haptics: dispositivo físico
+          Haptics.selectionAsync()
+          onPress()
+        }}
+      >
+        ...
+      </Pressable>
+    )
+  }
+  ```
+
+Guardar el commit con el mensaje: **"Paquetes expo añadidos: Haptics y NavigationBar"**
+
+## Octavo Commit: Lógica de la Calculadora
+
+- En `./src/hooks/useCalculator.ts` añadir:
+
+  ```ts
+  import { useRef, useState } from 'react';
+  enum Operator {
+    // 1
+    add = '+',
+    subtract = '-',
+    multiply = 'x',
+    divide = '÷',
+  }
+
+  export const useCalculator = () => {
+    const [formula, setFormula] = useState(''); // 2
+
+    const [number, setNumber] = useState(''); // 3
+    const [prevNumber, setPrevNumber] = useState('0'); // 4
+
+    const lastOperation = useRef<Operator>(); // 1
+
+    const buildNumber = (numberString: string) => {
+      console.log({ numberString });
+    };
+
+    return {
+      // Props
+      formula,
+      number,
+      prevNumber,
+
+      // Methods
+      buildNumber,
+    };
+  };
+  ```
+
+  > Probamos nuestro `Hook`
+
+- En `./src/app/index.tsx` modificamos:
+
+  ```tsx
+  ...
+  import { useCalculator } from '@/hooks/useCalculator'
+
+  const CalculatorApp = () => {
+    const {
+      formula,
+      buildNumber,
+    } = useCalculator();
+
+    return (
+      <View style={globalStyles.calculatorContainer}>
+        {/* Resultados */}
+        <View style={{ paddingHorizontal: 30, marginBottom: 20 }}>
+          <ThemeText variant="h1">{formula}</ThemeText>
+          <ThemeText variant="h2">2500</ThemeText>
+        </View>
+
+        {/* Filas de botones */}
+        {/* TODO: En todos los botones donde tengamnos números y el putno '.' cambiar el método por buildNumber */}
+        <View style={globalStyles.row}>
+          <CalculatorButton
+            label="7"
+            onPress={() => buildNumber('7')}
+          />
+          ...
+        </View>
+      </View>
+    );
+  };
+
+  export default CalculatorApp;
+  ```
+
+  > Añadimos `formula` en nuestro `h1` y `buildNumber` en los botones que contengan números o punto `.`
+  > Verificamos que en nuestra terminal al precionar los botones llega al `Hook`
+
+- En `./src/hooks/useCalculator.ts` añadir:
+
+  ```ts
+  ...
+
+  export const useCalculator = () => {
+
+    useEffect(() => {
+      // TODO: calcular subResultado
+      setFormula(number);
+    }, [number]);
+
+    ...
+  };
+  ```
+
+  > Debemos tomar en cuenta multiples conbinaciones al momento de introducir un número.
