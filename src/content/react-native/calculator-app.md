@@ -33,6 +33,8 @@ readtime: 60
 
 9. [**Séptimo Commit: Paquetes adicionales - Haptics y NavigationBar**](#séptimo-commit-paquetes-adicionales---haptics-y-navigationbar)
 
+10. [**Octavo Commit: Lógica de la Calculadora**](#octavo-commit-lógica-de-la-calculadora)
+
 # Calculadora con React Native
 
 ## Crear Proyecto
@@ -845,3 +847,5 @@ Guardar el commit con el mensaje: **"Paquetes expo añadidos: Haptics y Navigati
   ```
 
   > Debemos tomar en cuenta multiples conbinaciones al momento de introducir un número.
+
+Guardar el commit con el mensaje: **"Lógica Calculadora: creando nuestro Hook useCalculator"**
